@@ -19,8 +19,12 @@ const Ul = styled.ul`
   }
 
   @media (max-width: 768px) {
+    margin-top: 96px;
     flex-flow: column nowrap;
-    background-color: #0d2538;
+    background-color: white;
+    color: white;
+    justify-content: flex-start;
+    align-items: center;
     z-index: 1;
     position: fixed;
     transform: ${({ open }) =>
@@ -30,7 +34,7 @@ const Ul = styled.ul`
     top: 0;
     right: 0;
     height: 100vh;
-    width: 300px;
+    width: 100%;
     padding-top: 3.5rem;
     transition: transform 0.3s
       ease-in-out;

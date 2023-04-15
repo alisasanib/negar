@@ -54,7 +54,6 @@ export default function Animation() {
         <iframe
           src='https://player.vimeo.com/video/648082236?h=f1d08ed2e4'
           className='video-iframe'
-          height='500'
           frameborder='0'
           allow='autoplay; fullscreen; picture-in-picture'
           allowfullscreen></iframe>
