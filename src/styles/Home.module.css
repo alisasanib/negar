@@ -4,7 +4,13 @@
   justify-content: space-between;
   align-items: center;
   padding: 6rem;
-  min-height: 100vh;
+  padding-top: 1rem;
+}
+
+@media only screen and (max-width: 780px) {
+  .main {
+    padding: 10px;
+  }
 }
 
 .description {
@@ -15,7 +21,9 @@
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
-  font-family: var(--font-mono);
+  font-family: var(
+    --font-mono
+  );
 }
 
 .description a {
@@ -29,29 +37,55 @@
   position: relative;
   margin: 0;
   padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
+  background-color: rgba(
+    var(--callout-rgb),
+    0.5
+  );
+  border: 1px solid
+    rgba(
+      var(
+        --callout-border-rgb
+      ),
+      0.3
+    );
+  border-radius: var(
+    --border-radius
+  );
 }
 
 .code {
   font-weight: 700;
-  font-family: var(--font-mono);
+  font-family: var(
+    --font-mono
+  );
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(
+    4,
+    minmax(25%, auto)
+  );
   width: var(--max-width);
   max-width: 100%;
 }
 
 .card {
   padding: 1rem 1.2rem;
-  border-radius: var(--border-radius);
-  background: rgba(var(--card-rgb), 0);
-  border: 1px solid rgba(var(--card-border-rgb), 0);
-  transition: background 200ms, border 200ms;
+  border-radius: var(
+    --border-radius
+  );
+  background: rgba(
+    var(--card-rgb),
+    0
+  );
+  border: 1px solid
+    rgba(
+      var(--card-border-rgb),
+      0
+    );
+  transition: background 200ms,
+    border 200ms;
 }
 
 .card span {
@@ -81,7 +115,9 @@
 }
 
 .center::before {
-  background: var(--secondary-glow);
+  background: var(
+    --secondary-glow
+  );
   border-radius: 50%;
   width: 480px;
   height: 360px;
@@ -89,7 +125,9 @@
 }
 
 .center::after {
-  background: var(--primary-glow);
+  background: var(
+    --primary-glow
+  );
   width: 240px;
   height: 180px;
   z-index: -1;
@@ -97,7 +135,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -110,12 +148,23 @@
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
-    background: rgba(var(--card-rgb), 0.1);
-    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+    background: rgba(
+      var(--card-rgb),
+      0.1
+    );
+    border: 1px solid
+      rgba(
+        var(
+          --card-border-rgb
+        ),
+        0.15
+      );
   }
 
   .card:hover span {
-    transform: translateX(4px);
+    transform: translateX(
+      4px
+    );
   }
 }
 
@@ -177,14 +226,30 @@
     padding: 2rem 1rem 1.4rem;
     border-radius: 0;
     border: none;
-    border-bottom: 1px solid rgba(var(--callout-border-rgb), 0.25);
+    border-bottom: 1px solid
+      rgba(
+        var(
+          --callout-border-rgb
+        ),
+        0.25
+      );
     background: linear-gradient(
       to bottom,
-      rgba(var(--background-start-rgb), 1),
-      rgba(var(--callout-rgb), 0.5)
+      rgba(
+        var(
+          --background-start-rgb
+        ),
+        1
+      ),
+      rgba(
+        var(--callout-rgb),
+        0.5
+      )
     );
     background-clip: padding-box;
-    backdrop-filter: blur(24px);
+    backdrop-filter: blur(
+      24px
+    );
   }
 
   .description div {
@@ -196,7 +261,12 @@
     background: linear-gradient(
       to bottom,
       transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
+      rgb(
+          var(
+            --background-end-rgb
+          )
+        )
+        40%
     );
     z-index: 1;
   }
@@ -205,7 +275,10 @@
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
-    grid-template-columns: repeat(2, 50%);
+    grid-template-columns: repeat(
+      2,
+      50%
+    );
   }
 }
 
@@ -215,7 +288,10 @@
   }
 
   .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
+    filter: invert(1)
+      drop-shadow(
+        0 0 0.3rem #ffffff70
+      );
   }
 }
 
@@ -226,4 +302,42 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.banner {
+  color: #3e3e3e;
+  font-family: "Quattrocento Sans",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+  -webkit-font-smoothing: antialiased;
+  display: table-cell;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  /* background: url(theme/images/default-bg.jpg?1672707184)
+    no-repeat; */
+  height: 389px;
+  vertical-align: middle;
+  background-image: url("/GonewiththeWind.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  background-color: transparent;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.banner_text_container {
+  text-align: center;
+  line-height: 390px;
+  background: transparent;
+  color: white;
+  font-size: 2rem;
+}
+
+.banner_text {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 40px;
 }

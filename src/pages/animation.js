@@ -8,12 +8,13 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export default function Animation() {
   return (
     <>
       <Head>
         <title>
-          Negar Yaraghi
+          Negar Yaraghi -
+          Animation
         </title>
         <meta
           name='description'
@@ -50,7 +51,13 @@ export default function Home() {
             </h2>
           </div>
         </div>
-        <Imagelist />
+        <iframe
+          src='https://player.vimeo.com/video/648082236?h=f1d08ed2e4'
+          className='video-iframe'
+          height='500'
+          frameborder='0'
+          allow='autoplay; fullscreen; picture-in-picture'
+          allowfullscreen></iframe>
       </main>
     </>
   );
