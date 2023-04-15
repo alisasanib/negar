@@ -34,7 +34,6 @@ export default function FullScreenImage({
   return (
     <div>
       <Modal
-        
         disablePortal
         open
         onClose={handleClose}
@@ -124,6 +123,10 @@ export default function FullScreenImage({
             srcSet={`${image.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={image.title}
             loading='lazy'
+            style={{
+              maxHeight:
+                "100vh",
+            }}
           />
         </Box>
         {/* </Box> */}
