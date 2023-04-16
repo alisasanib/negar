@@ -126,6 +126,8 @@ export default function FullScreenImage({
             style={{
               maxHeight:
                 "100vh",
+              maxWidth:
+                "100vw",
             }}
           />
         </Box>

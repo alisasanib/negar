@@ -33,7 +33,7 @@ export default function Animation() {
         className={
           styles.main
         }>
-        <div
+        {/* <div
           className={
             styles.banner
           }>
@@ -50,7 +50,7 @@ export default function Animation() {
               ILLUSTRATION
             </h2>
           </div>
-        </div>
+        </div> */}
         <iframe
           src='https://player.vimeo.com/video/648082236?h=f1d08ed2e4'
           className='video-iframe'

@@ -65,7 +65,7 @@ export default function MasonryImageList() {
         item
         xs={12}
         md={12}
-        lg={8}>
+        lg={10}>
         <Box>
           <ImageList
             variant='masonry'

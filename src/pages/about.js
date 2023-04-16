@@ -33,7 +33,7 @@ export default function Animation() {
         className={
           styles.main
         }>
-        <div
+        {/* <div
           className={
             styles.banner
           }>
@@ -50,7 +50,7 @@ export default function Animation() {
               ILLUSTRATION
             </h2>
           </div>
-        </div>
+        </div> */}
         <div
           style={{
             marginTop: 30,
