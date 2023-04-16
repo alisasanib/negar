@@ -54,7 +54,11 @@ export default function Animation() {
         <div
           style={{
             marginTop: 30,
-          }}>
+          }}
+          className={
+            styles.about_me
+          }
+          >
           Hi I am Negar
           Yaraghi 2D animator
         </div>

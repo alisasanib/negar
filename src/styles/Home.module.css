@@ -360,3 +360,8 @@
   vertical-align: middle;
   line-height: 40px;
 }
+.about_me {
+  font-family: "Quattrocento Sans",
+    sans-serif;
+  font-size: 16px;
+}
