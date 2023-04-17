@@ -57,10 +57,47 @@ export default function Animation() {
           }}
           className={
             styles.about_me
-          }
-          >
-          Hi I am Negar
-          Yaraghi 2D animator
+          }>
+          Hi! I'm Negar.
+          <br />
+          <br /> I am a 2D
+          Artist and Animator.
+          I love animation
+          over any art,
+          because it is where
+          all arts are tied
+          together and a
+          single work is
+          produced.
+          <br />
+          <br /> I have been
+          working since 2018.
+          Mostly, I worked as
+          a freelancer, making
+          ads/animation from 0
+          to 100. At this
+          moment, I am working
+          on my short film
+          that I am really
+          excited about, as a
+          MA Animation
+          Production student
+          in the UK.
+          <br />
+          <br /> If you'd like
+          to make an
+          interesting business
+          inquiry or ask a
+          question, please
+          contact me via
+          email:
+          <a
+            style={{
+              color: "blue",
+            }}
+            href='mailto:Yaraghi.negar@gmail.com'>
+            Yaraghi.negar@gmail.com
+          </a>
         </div>
       </main>
     </>
