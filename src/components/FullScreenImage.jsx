@@ -107,11 +107,14 @@ export default function FullScreenImage({
               cursor:
                 "pointer",
             }}
-            onClick={() =>
+            onClick={() => {
+              setLoading(
+                true
+              );
               changeScreenImage(
                 -1
-              )
-            }
+              );
+            }}
           />
           <ArrowForwardIosIcon
             sx={{
@@ -124,11 +127,14 @@ export default function FullScreenImage({
               cursor:
                 "pointer",
             }}
-            onClick={() =>
+            onClick={() => {
+              setLoading(
+                true
+              );
               changeScreenImage(
                 1
-              )
-            }
+              );
+            }}
           />
           {loading && (
             <CircularProgress />
