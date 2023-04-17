@@ -153,6 +153,10 @@ export default function FullScreenImage({
                 "100vh",
               maxWidth:
                 "100vw",
+              display:
+                loading
+                  ? "none"
+                  : "block",
             }}
             onLoad={
               imageLoaded
