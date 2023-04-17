@@ -119,7 +119,11 @@ export default function FullScreenImage({
             }
           />
           <img
-            src={`${image.img}?w=248&fit=crop&auto=format`}
+            src={
+              image.large
+                ? `${image.large}?w=248&fit=crop&auto=format`
+                : `${image.img}?w=248&fit=crop&auto=format`
+            }
             srcSet={`${image.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
             alt={image.title}
             loading='lazy'

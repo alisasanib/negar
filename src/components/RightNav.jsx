@@ -73,6 +73,48 @@ const RightNav = ({
           Home
         </Link>
       </li>
+      <li
+        style={
+          pathname ===
+          "/bookIllustration"
+            ? {
+                color:
+                  "black",
+              }
+            : {
+                color: "grey",
+              }
+        }
+        className='menu-title'>
+        <Link
+          onClick={
+            handleClick
+          }
+          href='/bookIllustration'>
+          BOOK ILLUSTRATION
+        </Link>
+      </li>
+      <li
+        style={
+          pathname ===
+          "/sketchbook"
+            ? {
+                color:
+                  "black",
+              }
+            : {
+                color: "grey",
+              }
+        }
+        className='menu-title'>
+        <Link
+          onClick={
+            handleClick
+          }
+          href='/sketchbook'>
+          SKETCHBOOK
+        </Link>
+      </li>
 
       <li
         style={
