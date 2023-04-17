@@ -39,6 +39,9 @@ export default function FullScreenImage({
   const imageLoaded = () => {
     setLoading(false);
   };
+  React.useEffect(() => {
+    setLoading(true);
+  }, [image]);
 
   return (
     <div>
