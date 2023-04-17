@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const style = {
   position: "absolute",
@@ -24,12 +25,20 @@ export default function FullScreenImage({
   closeModal,
   changeScreenImage,
 }) {
+  const [
+    loading,
+    setLoading,
+  ] = React.useState(true);
   const [open, setOpen] =
     React.useState(false);
   const handleOpen = () =>
     setOpen(true);
   const handleClose = () =>
     closeModal(false);
+
+  const imageLoaded = () => {
+    setLoading(false);
+  };
 
   return (
     <div>
@@ -118,6 +127,9 @@ export default function FullScreenImage({
               )
             }
           />
+          {loading && (
+            <CircularProgress />
+          )}
           <img
             src={
               image.large
@@ -133,6 +145,9 @@ export default function FullScreenImage({
               maxWidth:
                 "100vw",
             }}
+            onLoad={
+              imageLoaded
+            }
           />
         </Box>
         {/* </Box> */}
