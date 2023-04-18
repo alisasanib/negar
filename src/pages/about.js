@@ -58,7 +58,7 @@ export default function Animation() {
           className={
             styles.about_me
           }>
-          Hi! I'm Negar.
+          Hi! I&apos;m Negar.
           <br />
           <br /> I am a 2D
           Artist and Animator.
@@ -84,7 +84,7 @@ export default function Animation() {
           Production student
           in the UK.
           <br />
-          <br /> If you'd like
+          <br /> If you&apos;d like
           to make an
           interesting business
           inquiry or ask a
