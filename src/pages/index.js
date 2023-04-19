@@ -73,19 +73,41 @@ const itemData = [
     img: "chinese jelousy.jpg",
     title: "chinese ",
   },
+  
+  {
+    img: "soldier.jpg",
+    title: "soldier",
+  },
+  {
+    img: "Oldman.jpg",
+    title: "Oldman",
+  },
+  {
+    img: "Samak Ayar.jpg",
+    title: "Samak Ayar",
+  },
+  
+  {
+    img: "naked girl.jpg",
+    title: "naked girl",
+  },
   {
     img: "Emigration.jpg",
     title: "Emigration",
   },
   {
-    img: "FEDUAL JAPAN.jpg",
-    title: "FEDUAL JAPAN",
+    img: "children-books/illustrations/GIF File-06.gif",
+    large:
+      "children-books/illustrations/large/GIF File-06.gif",
+    title: "space",
   },
 
   {
     img: "GonewiththeWind.jpg",
     title: "GonewiththeWind",
   },
+  
+  
   {
     img: "Imprisoned-Designed for a mural.jpg",
     title:
@@ -104,24 +126,7 @@ const itemData = [
     title:
       "MODERN LITTLE PRINCE",
   },
-  {
-    img: "children-books/illustrations/GIF File-06.gif",
-    large:
-      "children-books/illustrations/large/GIF File-06.gif",
-    title: "space",
-  },
-  {
-    img: "naked girl.jpg",
-    title: "naked girl",
-  },
-  {
-    img: "Oldman.jpg",
-    title: "Oldman",
-  },
-  {
-    img: "Samak Ayar.jpg",
-    title: "Samak Ayar",
-  },
+
 
   {
     img: "space.jpg",

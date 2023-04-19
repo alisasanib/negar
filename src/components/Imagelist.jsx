@@ -6,6 +6,9 @@ import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import Grid from "@mui/material/Grid";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Masonry, {
+  ResponsiveMasonry,
+} from "react-responsive-masonry";
 import FullScreenImage from "./FullScreenImage";
 
 export default function MasonryImageList({
@@ -69,23 +72,20 @@ export default function MasonryImageList({
         md={12}
         lg={10}>
         <Box>
-          <ImageList
-            variant='masonry'
-            cols={
-              matches3col
-                ? 3
-                : matches2col
-                ? 2
-                : 1
-            }
-            gap={8}>
-            {itemData.map(
-              (item, id) => (
-                <ImageListItem
-                  key={
-                    item.img
-                  }>
+          <ResponsiveMasonry
+            columnsCountBreakPoints={{
+              350: 1,
+              750: 2,
+              900: 3,
+            }}>
+            <Masonry  gutter="10px">
+              {itemData.map(
+                (
+                  item,
+                  id
+                ) => (
                   <img
+                    key={id}
                     style={{
                       cursor:
                         "pointer",
@@ -103,10 +103,10 @@ export default function MasonryImageList({
                     }
                     loading='lazy'
                   />
-                </ImageListItem>
-              )
-            )}
-          </ImageList>
+                )
+              )}
+            </Masonry>
+          </ResponsiveMasonry>
           {isfullScreen && (
             <FullScreenImage
               image={
