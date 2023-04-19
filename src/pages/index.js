@@ -96,6 +96,11 @@ const itemData = [
     title: "Emigration",
   },
   {
+    img: "FEDUAL JAPAN.jpg",
+    title: "FEDUAL JAPAN",
+  },
+  
+  {
     img: "children-books/illustrations/GIF File-06.gif",
     large:
       "children-books/illustrations/large/GIF File-06.gif",
