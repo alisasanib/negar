@@ -1,14 +1,31 @@
+import {
+  useState,
+  useEffect,
+} from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Imagelist from "../components/Imagelist";
+// import Imagelist from "../components/Imagelist";
+// import ReactPlayer from "react-player/lazy";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
 export default function Animation() {
+  // const [
+  //   hasWindow,
+  //   setHasWindow,
+  // ] = useState(false);
+  // useEffect(() => {
+  //   if (
+  //     typeof window !==
+  //     "undefined"
+  //   ) {
+  //     setHasWindow(true);
+  //   }
+  // }, []);
   return (
     <>
       <Head>
@@ -52,7 +69,7 @@ export default function Animation() {
           </div>
         </div> */}
         <iframe
-          src='https://player.vimeo.com/video/818462864?h=0e74b87abc'
+          src='https://player.vimeo.com/video/833417806?h=0e74b87abc'
           className='video-iframe'
           frameborder='0'
           allow='autoplay; fullscreen; picture-in-picture'

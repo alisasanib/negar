@@ -1,3 +1,7 @@
+import {
+  useEffect,
+  useState,
+} from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -5,12 +9,25 @@ import styles from "@/styles/Home.module.css";
 import Imagelist from "../components/Imagelist";
 import ImageListNonMason from "../components/ImageListNonMason";
 import ImageGallery from "../components/ImageGallery";
+import ReactPlayer from "react-player/lazy";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
 export default function Home() {
+  const [
+    hasWindow,
+    setHasWindow,
+  ] = useState(false);
+  useEffect(() => {
+    if (
+      typeof window !==
+      "undefined"
+    ) {
+      setHasWindow(true);
+    }
+  }, []);
   return (
     <>
       <Head>
@@ -34,17 +51,54 @@ export default function Home() {
         className={
           styles.main
         }>
+        <h2
+          style={{
+            margin:
+              "20px 0px",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Project 1
+        </h2>
         <ImageGallery
           images={images}
         />
-        <h2 className={styles.showreel_title}>Story Reel</h2>
-        <iframe
-          src='https://player.vimeo.com/video/833149917?h=b3e1586594'
-          className='video-iframe'
-          frameborder='0'
-          width={"100%"}
-          allow='autoplay; fullscreen; picture-in-picture'
-          allowfullscreen></iframe>
+        <h2
+          style={{
+            fontWeight:
+              "normal",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Story Reel
+        </h2>
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={"770px"}
+            style={{
+              maxWidth:
+                "1320px",
+            }}
+            url='https://vimeo.com/833149917'
+            controls
+          />
+        )}
+        <h2
+          style={{
+            margin:
+              "20px 0px",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Project 2
+        </h2>
+        <ImageGallery
+          images={images2}
+        />
       </main>
     </>
   );
@@ -74,6 +128,33 @@ const images = [
   {
     original: "SB/6.jpg",
     thumbnail: "SB/6.jpg",
+  },
+  {
+    original: "SB/7.jpg",
+    thumbnail: "SB/7.jpg",
+  },
+  {
+    original: "SB/8.jpg",
+    thumbnail: "SB/8.jpg",
+  },
+  {
+    original: "SB/9.jpg",
+    thumbnail: "SB/9.jpg",
+  },
+];
+
+const images2 = [
+  {
+    original: "SB2/01.jpg",
+    thumbnail: "SB2/01.jpg",
+  },
+  {
+    original: "SB2/02.jpg",
+    thumbnail: "SB2/02.jpg",
+  },
+  {
+    original: "SB2/03.jpg",
+    thumbnail: "SB2/03.jpg",
   },
 ];
 

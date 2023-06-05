@@ -170,6 +170,26 @@ a {
 .showreel_title {
   font-family: "Cantarell" !important;
 }
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* 720 / 1280 = 0.5625 */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.image-gallery-content
+  .image-gallery-slide
+  .image-gallery-image {
+  max-width: 1320px;
+}
+.image-gallery {
+  width: 100%;
+}
 .menu-title {
   font-family: "Cantarell" !important;
   color: #3e3e3e;
