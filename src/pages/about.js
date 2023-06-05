@@ -71,7 +71,7 @@ export default function Animation() {
           produced.
           <br />
           <br /> I have been
-          working since 2018.
+          working since 2017.
           Mostly, I worked as
           a freelancer, making
           ads/animation from 0

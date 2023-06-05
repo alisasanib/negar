@@ -167,6 +167,9 @@ a {
   padding-top: 50px;
   padding-bottom: 30px;
 }
+.showreel_title {
+  font-family: "Cantarell" !important;
+}
 .menu-title {
   font-family: "Cantarell" !important;
   color: #3e3e3e;
@@ -530,6 +533,32 @@ a {
     display: none;
   }
 }
+.image-gallery-slide {
+  padding: 0px;
+}
+.image-gallery-thumbnail {
+  margin: 0px;
+  padding: 0px;
+  border: none !important;
+  opacity: 50%;
+  cursor: pointer;
+}
+.image-gallery-thumbnail
+  + .image-gallery-thumbnail {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+.image-gallery-thumbnail.active,
+.image-gallery-thumbnail:focus {
+  opacity: 100%;
+}
+.image-gallery-image {
+  opacity: 99.99%;
+}
+
+/* .image-gallery-content .image-gallery-slide .image-gallery-image {
+  max-height: fit-content !important;
+} */
 
 .banner_text_container {
   text-align: center;
@@ -543,6 +572,9 @@ a {
   display: inline-block;
   vertical-align: middle;
   line-height: 40px;
+
+  word-spacing: 50px;
+  font-size: 60px;
 }
 
 .right-nav {

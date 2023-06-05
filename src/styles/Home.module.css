@@ -359,6 +359,9 @@
   display: inline-block;
   vertical-align: middle;
   line-height: 40px;
+
+  word-spacing: 50px;
+  font-size: 60px;
 }
 .about_me {
   font-family: "Quattrocento Sans",
@@ -370,4 +373,8 @@
   .about_me {
     width: 80% !important;
   }
+}
+
+.showreel_title {
+  font-family: "Cantarell" !important;
 }

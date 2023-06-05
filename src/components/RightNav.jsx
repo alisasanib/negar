@@ -70,7 +70,7 @@ const RightNav = ({
             handleClick
           }
           href='/'>
-          Home
+          HOME
         </Link>
       </li>
       <li
@@ -92,6 +92,27 @@ const RightNav = ({
           }
           href='/bookIllustration'>
           BOOK ILLUSTRATION
+        </Link>
+      </li>
+      <li
+        style={
+          pathname ===
+          "/storyboard"
+            ? {
+                color:
+                  "black",
+              }
+            : {
+                color: "grey",
+              }
+        }
+        className='menu-title'>
+        <Link
+          onClick={
+            handleClick
+          }
+          href='/storyboard'>
+          STORYBOARD
         </Link>
       </li>
       <li
@@ -155,7 +176,7 @@ const RightNav = ({
             handleClick
           }
           href='/animation'>
-          Animation
+          ANIMATION
         </Link>
       </li>
     </Ul>

@@ -7,6 +7,55 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import CircularProgress from "@mui/material/CircularProgress";
 
+const useKeyPress = function (
+  targetKey
+) {
+  const [
+    keyPressed,
+    setKeyPressed,
+  ] = React.useState(false);
+
+  React.useEffect(() => {
+    const downHandler = ({
+      key,
+    }) => {
+      if (key === targetKey) {
+        setKeyPressed(true);
+      }
+    };
+
+    const upHandler = ({
+      key,
+    }) => {
+      if (key === targetKey) {
+        setKeyPressed(false);
+      }
+    };
+
+    window.addEventListener(
+      "keydown",
+      downHandler
+    );
+    window.addEventListener(
+      "keyup",
+      upHandler
+    );
+
+    return () => {
+      window.removeEventListener(
+        "keydown",
+        downHandler
+      );
+      window.removeEventListener(
+        "keyup",
+        upHandler
+      );
+    };
+  }, [targetKey]);
+
+  return keyPressed;
+};
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -25,6 +74,11 @@ export default function FullScreenImage({
   closeModal,
   changeScreenImage,
 }) {
+  const leftPress =
+    useKeyPress("ArrowLeft");
+  const rightPress =
+    useKeyPress("ArrowRight");
+
   const [
     loading,
     setLoading,
@@ -40,8 +94,19 @@ export default function FullScreenImage({
     setLoading(false);
   };
   React.useEffect(() => {
-    setLoading(true);
-  }, [image]);
+    //
+    if (leftPress) {
+      setLoading(true);
+      changeScreenImage(-1);
+    }
+  }, [leftPress]);
+
+  React.useEffect(() => {
+    if (rightPress) {
+      setLoading(true);
+      changeScreenImage(1);
+    }
+  }, [rightPress]);
 
   return (
     <div>

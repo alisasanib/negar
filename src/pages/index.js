@@ -44,8 +44,8 @@ export default function Home() {
               className={
                 styles.banner_text
               }>
-              VISUAL
-              DEVELOPMENT & ​
+              STORYBOARD
+              ANIMATION
               ILLUSTRATION
             </h2>
           </div>
@@ -73,7 +73,7 @@ const itemData = [
     img: "chinese jelousy.jpg",
     title: "chinese ",
   },
-  
+
   {
     img: "soldier.jpg",
     title: "soldier",
@@ -86,7 +86,7 @@ const itemData = [
     img: "Samak Ayar.jpg",
     title: "Samak Ayar",
   },
-  
+
   {
     img: "naked girl.jpg",
     title: "naked girl",
@@ -99,7 +99,7 @@ const itemData = [
     img: "FEDUAL JAPAN.jpg",
     title: "FEDUAL JAPAN",
   },
-  
+
   {
     img: "children-books/illustrations/GIF File-06.gif",
     large:
@@ -111,8 +111,7 @@ const itemData = [
     img: "GonewiththeWind.jpg",
     title: "GonewiththeWind",
   },
-  
-  
+
   {
     img: "Imprisoned-Designed for a mural.jpg",
     title:
@@ -131,7 +130,6 @@ const itemData = [
     title:
       "MODERN LITTLE PRINCE",
   },
-
 
   {
     img: "space.jpg",
