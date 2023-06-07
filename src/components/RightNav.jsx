@@ -21,7 +21,7 @@ const Ul = styled.ul`
   @media (max-width: 768px) {
     margin-top: 96px;
     flex-flow: column nowrap;
-    background-color: white;
+    background-color: red;
     color: white;
     justify-content: flex-start;
     align-items: center;
