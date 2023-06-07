@@ -78,31 +78,34 @@ export default function MasonryImageList({
               750: 2,
               900: 3,
             }}>
-            <Masonry  gutter="10px">
+            <Masonry gutter='10px'>
               {itemData.map(
                 (
                   item,
                   id
                 ) => (
-                  <img
-                    key={id}
-                    style={{
-                      cursor:
-                        "pointer",
-                    }}
-                    onClick={() =>
-                      handleFullScreen(
-                        id
-                      )
-                    }
-                    // src={`/${item.img}`}
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={
-                      item.title
-                    }
-                    loading='lazy'
-                  />
+                  <>
+                    <img
+                      key={id}
+                      style={{
+                        cursor:
+                          "pointer",
+                      }}
+                      onClick={() =>
+                        handleFullScreen(
+                          id
+                        )
+                      }
+                      // src={`/${item.img}`}
+                      src={`${item.img}?w=248&fit=crop&auto=format`}
+                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      alt={
+                        item.title
+                      }
+                      loading='lazy'
+                    />
+                    1
+                  </>
                 )
               )}
             </Masonry>
