@@ -91,7 +91,7 @@ export default function MasonryImageList({
                         cursor:
                           "pointer",
                         minWidth:
-                          "300px",
+                          "100%",
                         minHeight:
                           "auto",
                       }}
