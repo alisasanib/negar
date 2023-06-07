@@ -84,32 +84,29 @@ export default function MasonryImageList({
                   item,
                   id
                 ) => (
-                  <>
-                    <img
-                      key={id}
-                      style={{
-                        cursor:
-                          "pointer",
-                        minWidth:
-                          "100%",
-                        minHeight:
-                          "auto",
-                      }}
-                      onClick={() =>
-                        handleFullScreen(
-                          id
-                        )
-                      }
-                      // src={`/${item.img}`}
-                      src={`${item.img}?w=248&fit=crop&auto=format`}
-                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                      alt={
-                        item.title
-                      }
-                      loading='lazy'
-                    />
-                    1
-                  </>
+                  <img
+                    key={id}
+                    style={{
+                      cursor:
+                        "pointer",
+                      minWidth:
+                        "100%",
+                      minHeight:
+                        "auto",
+                    }}
+                    onClick={() =>
+                      handleFullScreen(
+                        id
+                      )
+                    }
+                    // src={`/${item.img}`}
+                    src={`${item.img}?w=248&fit=crop&auto=format`}
+                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                    alt={
+                      item.title
+                    }
+                    loading='lazy'
+                  />
                 )
               )}
             </Masonry>
