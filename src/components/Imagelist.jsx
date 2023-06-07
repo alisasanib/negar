@@ -90,6 +90,10 @@ export default function MasonryImageList({
                       style={{
                         cursor:
                           "pointer",
+                        minWidth:
+                          "300px",
+                        minHeight:
+                          "auto",
                       }}
                       onClick={() =>
                         handleFullScreen(
