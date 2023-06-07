@@ -995,10 +995,12 @@ a {
     sans-serif;
   font-size: 16px;
   width: 50vw;
+  color: #000000;
 }
 @media only screen and (max-width: 780px) {
   .about_me {
     width: 80% !important;
+    color: #000000;
   }
 }
 
