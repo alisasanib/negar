@@ -54,6 +54,8 @@ export default function Animation() {
         <div
           style={{
             marginTop: 30,
+            color:
+              "black !important",
           }}
           className={
             styles.about_me
@@ -84,8 +86,8 @@ export default function Animation() {
           Production student
           in the UK.
           <br />
-          <br /> If you&apos;d like
-          to make an
+          <br /> If you&apos;d
+          like to make an
           interesting business
           inquiry or ask a
           question, please
