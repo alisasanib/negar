@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Head from 'next/head';
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import NProgress from "nprogress";
@@ -47,10 +48,39 @@ export default function App({
     };
   }, []);
   return (
-    <Navbar>
-      <Component
-        {...pageProps}
-      />
-    </Navbar>
+    <>
+      <Head>
+        {" "}
+        <link
+          rel='preconnect'
+          href='https://fonts.googleapis.com'
+        />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap'
+          rel='stylesheet'
+        />
+        <link
+          href='https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand:wght@500&display=swap'
+          rel='stylesheet'
+        />
+        {/* <link
+          href='https://fonts.googleapis.com/css?family=Quicksand&display=optional'
+          rel='stylesheet'
+        /> */}
+        <link
+          href='https://fonts.googleapis.com/css?family=Cantarell&display=optional'
+          rel='stylesheet'
+        />
+      </Head>
+      <Navbar>
+        <Component
+          {...pageProps}
+        />
+      </Navbar>
+    </>
   );
 }
