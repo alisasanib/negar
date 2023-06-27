@@ -169,6 +169,7 @@ a {
 }
 .showreel_title {
   font-family: "Cantarell" !important;
+  
 }
 
 .player-wrapper {
@@ -189,6 +190,12 @@ a {
 }
 .image-gallery {
   width: 100%;
+}
+.center {
+  padding: 0px;
+}
+.image-gallery-slide .center {
+  padding: 0px !important;
 }
 .menu-title {
   font-family: "Cantarell" !important;
@@ -1007,7 +1014,7 @@ a {
 .showreel_title {
   font-family: "Cantarell" !important;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 30px;
   font-size: 30px;
 }
 

@@ -376,11 +376,14 @@
     color: #000000;
   }
 }
+.image-gallery-slide .center {
+  padding: 0px !important;
+}
 
 .showreel_title {
   font-family: "Cantarell" !important;
   margin-top: 10px;
-  margin-bottom: 0px;
+  margin-bottom: 1rem;
   font-size: 30px;
 }
 

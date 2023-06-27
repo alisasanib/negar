@@ -6,10 +6,12 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+
 import Imagelist from "../components/Imagelist";
 import ImageListNonMason from "../components/ImageListNonMason";
 import ImageGallery from "../components/ImageGallery";
 import ReactPlayer from "react-player/lazy";
+
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,8 +55,24 @@ export default function Home() {
         }>
         <h2
           style={{
-            margin:
-              "20px 0px",
+            marginTop: "20px",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Love Death + Robots
+          Practice
+        </h2>
+        <ImageGallery
+          images={images3}
+        />
+        <div
+          style={{
+            margin: 40,
+          }}></div>
+        <h2
+          style={{
+            marginTop: "20px",
           }}
           className={
             styles.showreel_title
@@ -86,10 +104,13 @@ export default function Home() {
             controls
           />
         )}
+        <div
+          style={{
+            margin: 40,
+          }}></div>
         <h2
           style={{
-            margin:
-              "20px 0px",
+            marginTop: "20px",
           }}
           className={
             styles.showreel_title
@@ -155,6 +176,29 @@ const images2 = [
   {
     original: "SB2/03.jpg",
     thumbnail: "SB2/03.jpg",
+  },
+];
+
+const images3 = [
+  {
+    original: "SB3/1.jpg",
+    thumbnail: "SB3/1.jpg",
+  },
+  {
+    original: "SB3/2.jpg",
+    thumbnail: "SB3/2.jpg",
+  },
+  {
+    original: "SB3/3.jpg",
+    thumbnail: "SB3/3.jpg",
+  },
+  {
+    original: "SB3/4.jpg",
+    thumbnail: "SB3/4.jpg",
+  },
+  {
+    original: "SB3/5.jpg",
+    thumbnail: "SB3/5.jpg",
   },
 ];
 

@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import Head from 'next/head';
+import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
 import NProgress from "nprogress";
 import "@/styles/globals.css";
 import "nprogress/nprogress.css";
+import "./storyboard.css";
 
 export default function App({
   Component,
