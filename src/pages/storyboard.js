@@ -12,7 +12,6 @@ import ImageListNonMason from "../components/ImageListNonMason";
 import ImageGallery from "../components/ImageGallery";
 import ReactPlayer from "react-player/lazy";
 
-
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -53,23 +52,6 @@ export default function Home() {
         className={
           styles.main
         }>
-        <h2
-          style={{
-            marginTop: "20px",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Love Death + Robots
-          Practice
-        </h2>
-        <ImageGallery
-          images={images3}
-        />
-        <div
-          style={{
-            margin: 40,
-          }}></div>
         <h2
           style={{
             marginTop: "20px",
@@ -119,6 +101,24 @@ export default function Home() {
         </h2>
         <ImageGallery
           images={images2}
+        />
+        <div
+          style={{
+            margin: 40,
+          }}></div>
+
+        <h2
+          style={{
+            marginTop: "20px",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Love Death + Robots
+          Practice
+        </h2>
+        <ImageGallery
+          images={images3}
         />
       </main>
     </>
