@@ -120,6 +120,52 @@ export default function Home() {
         <ImageGallery
           images={images3}
         />
+        <h2
+          style={{
+            fontWeight:
+              "normal",
+          }}
+          className={
+            styles.showreel_title
+          }>
+          Animatics
+        </h2>
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={"770px"}
+            style={{
+              maxWidth:
+                "1320px",
+            }}
+            url='https://vimeo.com/840235953'
+            controls
+          />
+        )}
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={"770px"}
+            style={{
+              maxWidth:
+                "1320px",
+            }}
+            url='https://vimeo.com/840240581'
+            controls
+          />
+        )}
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={"770px"}
+            style={{
+              maxWidth:
+                "1320px",
+            }}
+            url='https://vimeo.com/840243857'
+            controls
+          />
+        )}
       </main>
     </>
   );
