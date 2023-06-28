@@ -173,41 +173,41 @@ export default function Home() {
 
 const images = [
   {
-    original: "SB/1.jpg",
-    thumbnail: "SB/1.jpg",
+    original: "SB/SB/1.jpg",
+    thumbnail: "SB/SB/1.jpg",
   },
   {
-    original: "SB/2.jpg",
-    thumbnail: "SB/2.jpg",
+    original: "SB/SB/2.jpg",
+    thumbnail: "SB/SB/2.jpg",
   },
   {
-    original: "SB/3.jpg",
-    thumbnail: "SB/3.jpg",
+    original: "SB/SB/3.jpg",
+    thumbnail: "SB/SB/3.jpg",
   },
   {
-    original: "SB/4.jpg",
-    thumbnail: "SB/4.jpg",
+    original: "SB/SB/4.jpg",
+    thumbnail: "SB/SB/4.jpg",
   },
   {
-    original: "SB/5.jpg",
-    thumbnail: "SB/5.jpg",
+    original: "SB/SB/5.jpg",
+    thumbnail: "SB/SB/5.jpg",
   },
   {
-    original: "SB/6.jpg",
-    thumbnail: "SB/6.jpg",
+    original: "SB/SB/6.jpg",
+    thumbnail: "SB/SB/6.jpg",
   },
-  {
-    original: "SB/7.jpg",
-    thumbnail: "SB/7.jpg",
-  },
-  {
-    original: "SB/8.jpg",
-    thumbnail: "SB/8.jpg",
-  },
-  {
-    original: "SB/9.jpg",
-    thumbnail: "SB/9.jpg",
-  },
+  // {
+  //   original: "SB/7.jpg",
+  //   thumbnail: "SB/7.jpg",
+  // },
+  // {
+  //   original: "SB/8.jpg",
+  //   thumbnail: "SB/8.jpg",
+  // },
+  // {
+  //   original: "SB/9.jpg",
+  //   thumbnail: "SB/9.jpg",
+  // },
 ];
 
 const images2 = [
