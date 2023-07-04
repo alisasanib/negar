@@ -138,19 +138,7 @@ export default function Home() {
               maxWidth:
                 "1320px",
             }}
-            url='https://vimeo.com/840235953'
-            controls
-          />
-        )}
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={"770px"}
-            style={{
-              maxWidth:
-                "1320px",
-            }}
-            url='https://vimeo.com/840240581'
+            url='https://vimeo.com/842136032'
             controls
           />
         )}
