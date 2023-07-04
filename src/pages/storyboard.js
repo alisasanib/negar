@@ -150,7 +150,7 @@ export default function Home() {
               maxWidth:
                 "1320px",
             }}
-            url='https://vimeo.com/840243857'
+            url='https://vimeo.com/842171171'
             controls
           />
         )}
