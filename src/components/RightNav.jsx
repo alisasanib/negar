@@ -70,28 +70,7 @@ const RightNav = ({
             handleClick
           }
           href='/'>
-          HOME
-        </Link>
-      </li>
-      <li
-        style={
-          pathname ===
-          "/bookIllustration"
-            ? {
-                color:
-                  "black",
-              }
-            : {
-                color: "grey",
-              }
-        }
-        className='menu-title'>
-        <Link
-          onClick={
-            handleClick
-          }
-          href='/bookIllustration'>
-          BOOK ILLUSTRATION
+          ILLUSTRATION
         </Link>
       </li>
       <li
@@ -118,6 +97,49 @@ const RightNav = ({
       <li
         style={
           pathname ===
+          "/animation"
+            ? {
+                color:
+                  "black",
+              }
+            : {
+                color: "grey",
+              }
+        }
+        className='menu-title'>
+        <Link
+          onClick={
+            handleClick
+          }
+          href='/animation'>
+          ANIMATION
+        </Link>
+      </li>
+      <li
+        style={
+          pathname ===
+          "/bookIllustration"
+            ? {
+                color:
+                  "black",
+              }
+            : {
+                color: "grey",
+              }
+        }
+        className='menu-title'>
+        <Link
+          onClick={
+            handleClick
+          }
+          href='/bookIllustration'>
+          BOOK ILLUSTRATION
+        </Link>
+      </li>
+
+      <li
+        style={
+          pathname ===
           "/sketchbook"
             ? {
                 color:
@@ -136,7 +158,7 @@ const RightNav = ({
           SKETCHBOOK
         </Link>
       </li>
-
+      
       <li
         style={
           pathname ===
@@ -156,27 +178,6 @@ const RightNav = ({
           }
           href='/about'>
           ABOUT/CONTACT
-        </Link>
-      </li>
-      <li
-        style={
-          pathname ===
-          "/animation"
-            ? {
-                color:
-                  "black",
-              }
-            : {
-                color: "grey",
-              }
-        }
-        className='menu-title'>
-        <Link
-          onClick={
-            handleClick
-          }
-          href='/animation'>
-          ANIMATION
         </Link>
       </li>
     </Ul>
