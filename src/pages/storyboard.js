@@ -77,10 +77,17 @@ export default function Home() {
         {hasWindow && (
           <ReactPlayer
             width={"100%"}
-            height={"770px"}
+            height={
+              "auto !important"
+            }
             style={{
               maxWidth:
                 "1320px",
+              maxHeight: 770,
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
             }}
             url='https://vimeo.com/833149917'
             controls
@@ -133,10 +140,17 @@ export default function Home() {
         {hasWindow && (
           <ReactPlayer
             width={"100%"}
-            height={"770px"}
+            height={
+              "auto !important"
+            }
             style={{
               maxWidth:
                 "1320px",
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
+              marginBottom: 100,
             }}
             url='https://vimeo.com/842136032'
             controls
@@ -145,10 +159,16 @@ export default function Home() {
         {hasWindow && (
           <ReactPlayer
             width={"100%"}
-            height={"770px"}
+            height={
+              "auto !important"
+            }
             style={{
               maxWidth:
                 "1320px",
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
             }}
             url='https://vimeo.com/842171171'
             controls
