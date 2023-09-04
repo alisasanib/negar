@@ -169,7 +169,6 @@ a {
 }
 .showreel_title {
   font-family: "Cantarell" !important;
-  
 }
 
 .player-wrapper {
@@ -583,9 +582,10 @@ a {
   opacity: 99.99%;
 }
 
-/* .image-gallery-content .image-gallery-slide .image-gallery-image {
-  max-height: fit-content !important;
-} */
+.image-gallery-thumbnails {
+  max-width: 1320px;
+  margin: auto;
+}
 
 .banner_text_container {
   text-align: center;

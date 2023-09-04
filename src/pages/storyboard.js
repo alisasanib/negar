@@ -21,6 +21,24 @@ export default function Home() {
     hasWindow,
     setHasWindow,
   ] = useState(false);
+  const [
+    imagesnew2,
+    setImagesnew2,
+  ] = useState(null);
+  useEffect(() => {
+    const list = [];
+    for (
+      let index = 1;
+      index < 70;
+      index++
+    ) {
+      list.push({
+        original: `storyboard -Last Supper/${index}.jpg`,
+        thumbnail: `storyboard -Last Supper/${index}.jpg`,
+      });
+    }
+    setImagesnew2(list);
+  }, []);
   useEffect(() => {
     if (
       typeof window !==
@@ -106,12 +124,73 @@ export default function Home() {
           }>
           Project 2
         </h2>
-        <ImageGallery
-          images={images2}
-        />
+        {imagesnew2 && (
+          <ImageGallery
+            images={
+              imagesnew2
+            }
+          />
+        )}
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={
+              "auto !important"
+            }
+            style={{
+              maxWidth:
+                "1320px",
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
+              marginBottom: 20,
+            }}
+            url='videos/Animatic/1-edited.mp4'
+            controls
+          />
+        )}
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={
+              "auto !important"
+            }
+            style={{
+              maxWidth:
+                "1320px",
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
+              marginBottom: 20,
+            }}
+            url='videos/Animatic/2-edited.mp4'
+            controls
+          />
+        )}
+        {hasWindow && (
+          <ReactPlayer
+            width={"100%"}
+            height={
+              "auto !important"
+            }
+            style={{
+              maxWidth:
+                "1320px",
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
+              marginBottom: 20,
+            }}
+            url='videos/Animatic/3.mp4'
+            controls
+          />
+        )}
         <div
           style={{
-            margin: 40,
+            margin: 10,
           }}></div>
 
         <h2
@@ -216,21 +295,6 @@ const images = [
   //   original: "SB/9.jpg",
   //   thumbnail: "SB/9.jpg",
   // },
-];
-
-const images2 = [
-  {
-    original: "SB2/01.jpg",
-    thumbnail: "SB2/01.jpg",
-  },
-  {
-    original: "SB2/02.jpg",
-    thumbnail: "SB2/02.jpg",
-  },
-  {
-    original: "SB2/03.jpg",
-    thumbnail: "SB2/03.jpg",
-  },
 ];
 
 const images3 = [
