@@ -1,3 +1,4 @@
+import fs from "fs";
 import {
   useEffect,
   useState,
@@ -6,17 +7,38 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-
-import Imagelist from "../components/Imagelist";
+import CustomizedModalStoryBoard from "../components/CustomizedModalStoryBoard";
 import ImageListNonMason from "../components/ImageListNonMason";
-import ImageGallery from "../components/ImageGallery";
-import ReactPlayer from "react-player/lazy";
+import StoryBoardDetails from "@/components/StoryBoardDetails";
 
 const inter = Inter({
   subsets: ["latin"],
 });
 
-export default function Home() {
+export async function getStaticProps() {
+  console.log("123");
+  const fileNames =
+    fs.readdirSync(
+      "./public/storyboards/seagul"
+    );
+  console.log(
+    "fileNames",
+    fileNames
+  );
+  return {
+    props: {
+      images: fileNames,
+    },
+  };
+}
+
+export default function Home({
+  imageNames,
+}) {
+  console.log(
+    "imagesimages12",
+    imageNames
+  );
   const [
     hasWindow,
     setHasWindow,
@@ -24,6 +46,14 @@ export default function Home() {
   const [
     imagesnew2,
     setImagesnew2,
+  ] = useState(null);
+  const [
+    isModalOpen,
+    setIsModalOpen,
+  ] = useState(false);
+  const [
+    selectedProject,
+    setSelectedProject,
   ] = useState(null);
   useEffect(() => {
     const list = [];
@@ -47,6 +77,16 @@ export default function Home() {
       setHasWindow(true);
     }
   }, []);
+
+  const handleOnClick = (
+    id
+  ) => {
+    console.log(id);
+    setSelectedProject(
+      images[id]
+    );
+    setIsModalOpen(true);
+  };
   return (
     <>
       <Head>
@@ -70,189 +110,46 @@ export default function Home() {
         className={
           styles.main
         }>
-        <h2
-          style={{
-            marginTop: "20px",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Project 1
-        </h2>
-        <ImageGallery
-          images={images}
-        />
-        <h2
-          style={{
-            fontWeight:
-              "normal",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Story Reel
-        </h2>
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              maxWidth:
-                "1320px",
-              maxHeight: 770,
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-            }}
-            url='https://vimeo.com/833149917'
-            controls
-          />
-        )}
         <div
-          style={{
-            margin: 40,
-          }}></div>
-        <h2
-          style={{
-            marginTop: "20px",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Project 2
-        </h2>
-        {imagesnew2 && (
-          <ImageGallery
-            images={
-              imagesnew2
-            }
-          />
-        )}
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              maxWidth:
-                "1320px",
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-              marginBottom: 20,
-            }}
-            url='videos/Animatic/1-edited.mp4'
-            controls
-          />
-        )}
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              maxWidth:
-                "1320px",
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-              marginBottom: 20,
-            }}
-            url='videos/Animatic/2-edited.mp4'
-            controls
-          />
-        )}
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              maxWidth:
-                "1320px",
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-              marginBottom: 20,
-            }}
-            url='videos/Animatic/3.mp4'
-            controls
-          />
-        )}
-        <div
-          style={{
-            margin: 10,
-          }}></div>
-
-        <h2
-          style={{
-            marginTop: "20px",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Love Death + Robots
-          Practice
-        </h2>
-        <ImageGallery
-          images={images3}
+          className={[
+            styles.banner,
+            styles.storyboard,
+          ].join(" ")}>
+          <div
+            className={
+              styles.banner_text_container
+            }>
+            <h2
+              className={
+                styles.banner_text
+              }>
+              STORYBOARD
+            </h2>
+          </div>
+        </div>
+        <ImageListNonMason
+          itemData={images}
+          handleOnClick={
+            handleOnClick
+          }
         />
-        <h2
-          style={{
-            fontWeight:
-              "normal",
-          }}
-          className={
-            styles.showreel_title
-          }>
-          Animatics
-        </h2>
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
+        <CustomizedModalStoryBoard
+          open={isModalOpen}
+          handleClose={() => {
+            setSelectedProject(
+              null
+            );
+            setIsModalOpen(
+              false
+            );
+          }}>
+          <StoryBoardDetails
+            path={"seagul"}
+            project={
+              selectedProject
             }
-            style={{
-              maxWidth:
-                "1320px",
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-              marginBottom: 100,
-            }}
-            url='https://vimeo.com/842136032'
-            controls
           />
-        )}
-        {hasWindow && (
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              maxWidth:
-                "1320px",
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-            }}
-            url='https://vimeo.com/842171171'
-            controls
-          />
-        )}
+        </CustomizedModalStoryBoard>
       </main>
     </>
   );
@@ -260,95 +157,13 @@ export default function Home() {
 
 const images = [
   {
-    original: "SB/SB/1.jpg",
-    thumbnail: "SB/SB/1.jpg",
-  },
-  {
-    original: "SB/SB/2.jpg",
-    thumbnail: "SB/SB/2.jpg",
-  },
-  {
-    original: "SB/SB/3.jpg",
-    thumbnail: "SB/SB/3.jpg",
-  },
-  {
-    original: "SB/SB/4.jpg",
-    thumbnail: "SB/SB/4.jpg",
-  },
-  {
-    original: "SB/SB/5.jpg",
-    thumbnail: "SB/SB/5.jpg",
-  },
-  {
-    original: "SB/SB/6.jpg",
-    thumbnail: "SB/SB/6.jpg",
-  },
-  // {
-  //   original: "SB/7.jpg",
-  //   thumbnail: "SB/7.jpg",
-  // },
-  // {
-  //   original: "SB/8.jpg",
-  //   thumbnail: "SB/8.jpg",
-  // },
-  // {
-  //   original: "SB/9.jpg",
-  //   thumbnail: "SB/9.jpg",
-  // },
-];
-
-const images3 = [
-  {
-    original: "SB3/1.jpg",
-    thumbnail: "SB3/1.jpg",
-  },
-  {
-    original: "SB3/2.jpg",
-    thumbnail: "SB3/2.jpg",
-  },
-  {
-    original: "SB3/3.jpg",
-    thumbnail: "SB3/3.jpg",
-  },
-  {
-    original: "SB3/4.jpg",
-    thumbnail: "SB3/4.jpg",
-  },
-  {
-    original: "SB3/5.jpg",
-    thumbnail: "SB3/5.jpg",
-  },
-];
-
-const itemData = [
-  {
-    img: "sb/001.jpg",
-    large: "sb/001.jpg",
-    title: "Samak Ayar",
-  },
-  {
-    img: "sb/002.jpg",
-    large: "sb/002.jpg",
-    title: "Samak Ayar",
-  },
-  {
-    img: "sb/003.jpg",
-    large: "sb/003.jpg",
-    title: "Samak Ayar",
-  },
-  {
-    img: "sb/004.jpg",
-    large: "sb/004.jpg",
-    title: "Samak Ayar",
-  },
-  {
-    img: "sb/005.jpg",
-    large: "sb/005.jpg",
-    title: "Samak Ayar",
-  },
-  {
-    img: "sb/006.jpg",
-    large: "sb/006.jpg",
-    title: "Samak Ayar",
+    img: "SB/SB/1.jpg",
+    title: "Seagul",
+    description:
+      "Seagul is a bird is the search of freedom",
+    videos: [
+      "https://vimeo.com/833149917",
+    ],
+    path: "seagul",
   },
 ];

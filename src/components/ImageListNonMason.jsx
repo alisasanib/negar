@@ -13,6 +13,7 @@ import FullScreenImage from "./FullScreenImage";
 
 export default function MasonryImageList({
   itemData,
+  handleOnClick,
 }) {
   const matches2col =
     useMediaQuery(
@@ -88,10 +89,14 @@ export default function MasonryImageList({
                     cursor:
                       "pointer",
                   }}
-                  onClick={() =>
-                    handleFullScreen(
-                      id
-                    )
+                  onClick={
+                    () =>
+                      handleOnClick(
+                        id
+                      )
+                    // handleFullScreen(
+                    //   id
+                    // )
                   }>
                   <img
                     // src={`/${item.img}`}

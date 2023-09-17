@@ -340,6 +340,10 @@
   /* background-position: 10% -200px; */
 }
 
+.banner.storyboard {
+  background-image: url("/storyboard-cover.jpg");
+}
+
 @media only screen and (max-width: 650px) {
   .banner {
     /* background-position: 10% -200px; */
