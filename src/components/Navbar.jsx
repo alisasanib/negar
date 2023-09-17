@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 import Burger from "./Burger";
+import Link from "next/link";
 // import "@/styles/Navbar.module.css";
 
 const Nav = styled.nav`
@@ -25,15 +27,27 @@ const Nav = styled.nav`
 const Navbar = ({
   children,
 }) => {
+  const router = useRouter();
+  console.log(
+    "router.pathname",
+    router.pathname
+  );
   return (
     <>
-      <Nav>
-        <div className='site-title'>
-          NEGAR YARAGHI
-        </div>
-        {/* <Burger /> */}
-      </Nav>
-      <Burger />
+      {router.pathname !==
+        "/" && (
+        <>
+          <Nav>
+            <Link href='/'>
+              <div className='site-title'>
+                NEGAR YARAGHI
+              </div>
+            </Link>
+            {/* <Burger /> */}
+          </Nav>
+          <Burger />
+        </>
+      )}
       {children}
     </>
   );

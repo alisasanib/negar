@@ -10,6 +10,7 @@ import Masonry, {
   ResponsiveMasonry,
 } from "react-responsive-masonry";
 import FullScreenImage from "./FullScreenImage";
+import { Typography } from "@mui/material";
 
 export default function MasonryImageList({
   itemData,
@@ -81,33 +82,60 @@ export default function MasonryImageList({
             cols={3}>
             {itemData.map(
               (item, id) => (
-                <ImageListItem
-                  key={
-                    item.img
-                  }
-                  style={{
-                    cursor:
-                      "pointer",
-                  }}
-                  onClick={
-                    () =>
-                      handleOnClick(
-                        id
-                      )
-                    // handleFullScreen(
-                    //   id
-                    // )
-                  }>
-                  <img
-                    // src={`/${item.img}`}
-                    src={`${item.img}?w=248&fit=crop&auto=format`}
-                    srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
-                    alt={
+                // eslint-disable-next-line react/jsx-key
+                <span style={{position: "relative"}}>
+                  <ImageListItem
+                    key={
+                      item.img
+                    }
+                    style={{
+                      cursor:
+                        "pointer",
+                    }}
+                    onClick={
+                      () =>
+                        handleOnClick(
+                          id
+                        )
+                      // handleFullScreen(
+                      //   id
+                      // )
+                    }>
+                    <img
+                      // src={`/${item.img}`}
+                      src={`${item.img}?w=248&fit=crop&auto=format`}
+                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      alt={
+                        item.title
+                      }
+                      loading='lazy'
+                    />
+                  </ImageListItem>
+                  <Typography
+                    id='modal-modal-description'
+                    variant='h6'
+                    sx={{
+                      mt: 2,
+                      position:
+                        "absolute",
+                      top: "90%",
+                      left: "3%",
+                      transform:
+                        "translate(0%, -90%)",
+                      color:
+                        "white",
+                      fontWeight:
+                        "bold",
+                    }}>
+                    {
                       item.title
                     }
-                    loading='lazy'
-                  />
-                </ImageListItem>
+                    <br />
+                    {
+                      item.genre
+                    }
+                  </Typography>
+                </span>
               )
             )}
           </ImageList>

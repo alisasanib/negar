@@ -55,7 +55,7 @@ const RightNav = ({
     <Ul open={open}>
       <li
         style={
-          pathname === "/"
+          pathname === "/illustration"
             ? {
                 color:
                   "black",
@@ -69,7 +69,7 @@ const RightNav = ({
           onClick={
             handleClick
           }
-          href='/'>
+          href='/illustration'>
           ILLUSTRATION
         </Link>
       </li>

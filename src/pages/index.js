@@ -3,6 +3,8 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Imagelist from "../components/Imagelist";
+import Link from "next/link";
+import { Typography } from "@mui/material";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,140 +31,110 @@ export default function Home() {
         />
       </Head>
       <main
+        style={{
+          padding: 0,
+          height: "100vh",
+        }}
         className={
           styles.main
         }>
-        <div
-          className={
-            styles.banner
-          }>
-          <div
-            className={
-              styles.banner_text_container
-            }>
-            <h2
-              className={
-                styles.banner_text
-              }>
-              STORYBOARD
-              ANIMATION
-              ILLUSTRATION
-            </h2>
+        <Link
+          style={{
+            width: "100%",
+            height: "33.3vh",
+            backgroundSize:
+              "cover",
+            backgroundPosition:
+              "center center",
+            backgroundRepeat:
+              "no-repeat",
+            backgroundImage:
+              "url(/GonewiththeWind.jpg)",
+          }}
+          href='/illustration'>
+          <div>
+            <Typography
+              id='modal-modal-description'
+              variant='h3'
+              sx={{
+                color:
+                  "white",
+                textAlign:
+                  "center",
+                lineHeight:
+                  "33.3vh",
+                curson:
+                  "poiner",
+              }}>
+              Illustration
+            </Typography>
           </div>
-        </div>
-        <Imagelist
-          itemData={itemData}
-        />
+        </Link>
+        <Link
+          style={{
+            width: "100%",
+            height: "33.3vh",
+            backgroundSize:
+              "cover",
+            backgroundPosition:
+              "center center",
+            backgroundRepeat:
+              "no-repeat",
+            backgroundImage:
+              "url(/storyboards/seagul/images/41.jpg)",
+          }}
+          href='/storyboard'>
+          <div>
+            <Typography
+              id='modal-modal-description'
+              variant='h3'
+              sx={{
+                color:
+                  "white",
+                textAlign:
+                  "center",
+                lineHeight:
+                  "33.3vh",
+                curson:
+                  "poiner",
+              }}>
+              Storyboard
+            </Typography>
+          </div>
+        </Link>
+        <Link
+          style={{
+            width: "100%",
+            height: "33.3vh",
+            backgroundSize:
+              "cover",
+            backgroundPosition:
+              "center center",
+            backgroundRepeat:
+              "no-repeat",
+            backgroundImage:
+              "url(/flight.gif)",
+          }}
+          href='/animation'>
+          <div>
+            <Typography
+              id='modal-modal-description'
+              variant='h3'
+              sx={{
+                color:
+                  "white",
+                textAlign:
+                  "center",
+                lineHeight:
+                  "33.3vh",
+                curson:
+                  "poiner",
+              }}>
+              Animation
+            </Typography>
+          </div>
+        </Link>
       </main>
     </>
   );
 }
-
-const itemData = [
-  {
-    img: "babydragontooth.jpg",
-    title: "Bed",
-  },
-  {
-    img: "children-books/illustrations/flight GIF-03.gif",
-    large:
-      "children-books/illustrations/large/flight GIF-03.gif",
-    title: "space",
-  },
-  {
-    img: "chinese jelousy.jpg",
-    title: "chinese ",
-  },
-
-  {
-    img: "soldier.jpg",
-    title: "soldier",
-  },
-  {
-    img: "Oldman.jpg",
-    title: "Oldman",
-  },
-  {
-    img: "Samak Ayar.jpg",
-    title: "Samak Ayar",
-  },
-
-  {
-    img: "naked girl.jpg",
-    title: "naked girl",
-  },
-  {
-    img: "Emigration.jpg",
-    title: "Emigration",
-  },
-  {
-    img: "FEDUAL JAPAN.jpg",
-    title: "FEDUAL JAPAN",
-  },
-
-  {
-    img: "children-books/illustrations/GIF File-06.gif",
-    large:
-      "children-books/illustrations/large/GIF File-06.gif",
-    title: "space",
-  },
-
-  {
-    img: "GonewiththeWind.jpg",
-    title: "GonewiththeWind",
-  },
-
-  {
-    img: "Imprisoned-Designed for a mural.jpg",
-    title:
-      "Imprisoned-Designed for a mural",
-  },
-  {
-    img: "in the train.jpg",
-    title: "in the train",
-  },
-  {
-    img: "last smile.jpg",
-    title: "last smile",
-  },
-  {
-    img: "MODERN LITTLE PRINCE.jpg",
-    title:
-      "MODERN LITTLE PRINCE",
-  },
-
-  {
-    img: "space.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/4.jpg",
-    large:
-      "children-books/illustrations/large/4.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/After You.jpg",
-    large:
-      "children-books/illustrations/large/After You.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/faces fff.jpg",
-    large:
-      "children-books/illustrations/large/faces fff.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/final 4-text 2.jpg",
-    large:
-      "children-books/illustrations/large/final 4-text 2.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/sleepy in luggage- bigger.jpg",
-    large:
-      "children-books/illustrations/large/sleepy in luggage- bigger.jpg",
-    title: "space",
-  },
-];

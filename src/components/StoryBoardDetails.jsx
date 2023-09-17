@@ -55,15 +55,17 @@ const StoryBoardDetails = ({
     <div
       style={{
         overflow: "auto",
+        margin: "20px 100px",
       }}>
       <Typography
         id='modal-modal-title'
-        variant='h6'
+        variant='h4'
         component='h2'>
         {project.title}
       </Typography>
       <Typography
         id='modal-modal-description'
+        variant='h6'
         sx={{ mt: 2 }}>
         {project.description}
       </Typography>
@@ -77,12 +79,12 @@ const StoryBoardDetails = ({
                 "auto !important"
               }
               style={{
-                maxWidth:
-                  "1320px",
                 height:
                   "auto !important",
                 aspectRatio:
                   "16/9",
+                margin:
+                  "auto",
               }}
               url='https://vimeo.com/842171171'
               controls

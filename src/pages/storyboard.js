@@ -157,13 +157,14 @@ export default function Home({
 
 const images = [
   {
-    img: "SB/SB/1.jpg",
-    title: "Seagul",
+    img: "storyboards/seagul/images/56.jpg",
+    title: "Freedom",
     description:
-      "Seagul is a bird is the search of freedom",
+      "Seagull is a bird in the search of freedom",
     videos: [
       "https://vimeo.com/833149917",
     ],
     path: "seagul",
+    genre: "Drama",
   },
 ];

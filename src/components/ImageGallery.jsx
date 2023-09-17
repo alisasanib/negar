@@ -12,6 +12,7 @@ class MyGallery extends React.Component {
         showPlayButton={false}
         useTranslate3D={false}
         items={this.props.images}
+        slideDuration={1}
       />
     );
   }
