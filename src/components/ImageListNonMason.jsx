@@ -79,11 +79,19 @@ export default function MasonryImageList({
               overflow:
                 "hidden",
             }}
-            cols={3}>
+            cols={
+              matches3col
+                ? 3
+                : 1
+            }>
             {itemData.map(
               (item, id) => (
                 // eslint-disable-next-line react/jsx-key
-                <span style={{position: "relative"}}>
+                <span
+                  style={{
+                    position:
+                      "relative",
+                  }}>
                   <ImageListItem
                     key={
                       item.img

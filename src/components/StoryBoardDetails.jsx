@@ -6,10 +6,15 @@ import {
 import Typography from "@mui/material/Typography";
 import ReactPlayer from "react-player/lazy";
 import ImageGallery from "./ImageGallery";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 const StoryBoardDetails = ({
   project,
 }) => {
+  const withMargin =
+    useMediaQuery(
+      "(min-width:900px)"
+    );
   const [
     hasWindow,
     setHasWindow,
@@ -55,7 +60,9 @@ const StoryBoardDetails = ({
     <div
       style={{
         overflow: "auto",
-        margin: "20px 100px",
+        margin: withMargin
+          ? "20px 100px"
+          : "0px",
       }}>
       <Typography
         id='modal-modal-title'
