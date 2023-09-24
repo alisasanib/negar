@@ -145,12 +145,7 @@ const itemData = [
       "children-books/illustrations/large/After You.jpg",
     title: "space",
   },
-  {
-    img: "children-books/illustrations/faces fff.jpg",
-    large:
-      "children-books/illustrations/large/faces fff.jpg",
-    title: "space",
-  },
+
   {
     img: "children-books/illustrations/final 4-text 2.jpg",
     large:

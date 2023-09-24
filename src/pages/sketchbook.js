@@ -32,10 +32,21 @@ export default function Home() {
         className={
           styles.main
         }>
-        {/* <div
-          className={
-            styles.banner
-          }>
+        {/* {
+    img: "children-books/illustrations/faces fff.jpg",
+    large:
+      "children-books/illustrations/large/faces fff.jpg",
+    title: "space",
+  }, */}
+        <div
+          style={{
+            filter:
+              "invert(0.15)",
+          }}
+          className={[
+            styles.banner,
+            styles.sketchbook,
+          ].join(" ")}>
           <div
             className={
               styles.banner_text_container
@@ -43,13 +54,15 @@ export default function Home() {
             <h2
               className={
                 styles.banner_text
-              }>
-              VISUAL
-              DEVELOPMENT & ​
-              ILLUSTRATION
+              }
+              style={{
+                color:
+                  "black",
+              }}>
+              SKETCHBOOK
             </h2>
           </div>
-        </div> */}
+        </div>
         <Imagelist
           itemData={itemData}
         />

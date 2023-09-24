@@ -330,18 +330,26 @@
   background-color: transparent;
   background-size: cover;
   background-attachment: fixed;
-  -o-background-size: 100%
+  -o-background-size: 95% auto;
+  -webkit-background-size: 95%
     auto;
-  -webkit-background-size: 100%
+  -moz-background-size: 95%
     auto;
-  -moz-background-size: 100%
-    auto;
-  background-size: 100% auto;
+  background-size: 95% auto;
   /* background-position: 10% -200px; */
 }
 
 .banner.storyboard {
   background-image: url("/storyboard-cover.jpg");
+}
+.banner.sketchbook {
+  background-image: url("/faces fff.jpg");
+}
+
+.banner.bookIllustration {
+  background-image: url("/3-2.jpg");
+  /* background-position: 100% -73px; */
+  background-position: 100% -153px;
 }
 
 @media only screen and (max-width: 650px) {

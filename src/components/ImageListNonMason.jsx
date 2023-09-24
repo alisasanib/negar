@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, {
   useState,
 } from "react";
@@ -29,6 +30,8 @@ export default function MasonryImageList({
     isfullScreen,
     setIsfullScreen,
   ] = useState(false);
+  const [gifId, setGidId] =
+    useState(null);
   const [
     displayedImage,
     setDisplayedImage,
@@ -78,6 +81,7 @@ export default function MasonryImageList({
             sx={{
               overflow:
                 "hidden",
+              gap: "10px",
             }}
             cols={
               matches3col
@@ -88,6 +92,16 @@ export default function MasonryImageList({
               (item, id) => (
                 // eslint-disable-next-line react/jsx-key
                 <span
+                  onMouseOver={() =>
+                    setGidId(
+                      id
+                    )
+                  }
+                  onMouseOut={() =>
+                    setGidId(
+                      null
+                    )
+                  }
                   style={{
                     position:
                       "relative",
@@ -100,19 +114,25 @@ export default function MasonryImageList({
                       cursor:
                         "pointer",
                     }}
-                    onClick={
-                      () =>
-                        handleOnClick(
-                          id
-                        )
-                      // handleFullScreen(
-                      //   id
-                      // )
+                    onClick={() =>
+                      handleOnClick(
+                        id
+                      )
                     }>
                     <img
                       // src={`/${item.img}`}
-                      src={`${item.img}?w=248&fit=crop&auto=format`}
-                      srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                      src={
+                        gifId !==
+                        id
+                          ? `${item.img}?w=248&fit=crop&auto=format`
+                          : item.gif
+                      }
+                      srcSet={
+                        gifId !==
+                        id
+                          ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
+                          : item.gif
+                      }
                       alt={
                         item.title
                       }
@@ -134,6 +154,9 @@ export default function MasonryImageList({
                         "white",
                       fontWeight:
                         "bold",
+                      lineHeight: 1,
+                      fontSize:
+                        "2.25rem",
                     }}>
                     {
                       item.title

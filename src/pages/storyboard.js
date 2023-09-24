@@ -168,6 +168,7 @@ const images = [
     ],
     path: "seagul",
     genre: "Drama",
+    gif: "storyboards/seagul/GIF cover/resize.gif",
   },
   {
     img: "storyboards/last_supper/GIF cover/43.jpg",
@@ -181,6 +182,7 @@ const images = [
       "storyboards/last_supper/Video/4.mp4",
     ],
     path: "last_supper",
-    genre: "Drama",
+    genre: "Action",
+    gif: "storyboards/last_supper/GIF cover/resize.gif",
   },
 ];
