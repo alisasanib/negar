@@ -143,7 +143,7 @@ export default function MasonryImageList({
                     id='modal-modal-description'
                     variant='h6'
                     sx={{
-                      mt: 2,
+                      mt: 1,
                       position:
                         "absolute",
                       top: "90%",
@@ -154,7 +154,7 @@ export default function MasonryImageList({
                         "white",
                       fontWeight:
                         "bold",
-                      lineHeight: 1,
+                      lineHeight: 0.9,
                       fontSize:
                         "2.25rem",
                     }}>

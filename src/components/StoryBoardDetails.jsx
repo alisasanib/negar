@@ -59,6 +59,18 @@ const StoryBoardDetails = ({
       original: `/storyboards/${project.path}/images/${el}`,
       thumbnail: `/storyboards/${project.path}/images/${el}`,
     }));
+
+  const imageslastSupper2 =
+    importAll(
+      require.context(
+        `/public/storyboards/last_supper2/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
   return (
     <div
       style={{
@@ -118,6 +130,9 @@ const StoryBoardDetails = ({
           project.path ===
           "last_supper"
             ? imageslastSupper
+            : project.path ===
+              "last_supper2"
+            ? imageslastSupper2
             : images
         }
       />

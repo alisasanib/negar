@@ -149,18 +149,29 @@ const images = [
     gif: "storyboards/seagul/GIF cover/resize.gif",
   },
   {
-    img: "storyboards/last_supper/GIF cover/43.jpg",
+    img: "storyboards/last_supper2/30.jpg",
     title: "Last Supper",
     description:
       "Seagull is a bird in the search of freedom",
     videos: [
       "storyboards/last_supper/Video/1.mp4",
       "storyboards/last_supper/Video/2.mp4",
+    ],
+    path: "last_supper",
+    genre: "Drama",
+    gif: "storyboards/last_supper/GIF cover/resize.gif",
+  },
+  {
+    img: "storyboards/last_supper/GIF cover/43.jpg",
+    title: "Last Supper",
+    description:
+      "Seagull is a bird in the search of freedom",
+    videos: [
       "storyboards/last_supper/Video/3.mp4",
       "storyboards/last_supper/Video/4.mp4",
     ],
-    path: "last_supper",
+    path: "last_supper2",
     genre: "Action",
-    gif: "storyboards/last_supper/GIF cover/resize.gif",
+    gif: "storyboards/last_supper2/resize.gif",
   },
 ];
