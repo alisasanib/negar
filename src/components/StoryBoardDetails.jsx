@@ -73,14 +73,22 @@ const StoryBoardDetails = ({
       }}>
       <Typography
         id='modal-modal-title'
+        sx={{
+          color:
+            "black !important",
+        }}
         variant='h4'
         component='h2'>
         {project.title}
       </Typography>
       <Typography
+        sx={{
+          color:
+            "black !important",
+          mt: 2,
+        }}
         id='modal-modal-description'
-        variant='h6'
-        sx={{ mt: 2 }}>
+        variant='h6'>
         {project.description}
       </Typography>
       {project.videos.map(

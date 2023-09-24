@@ -81,7 +81,7 @@ export default function MasonryImageList({
             sx={{
               overflow:
                 "hidden",
-              gap: "10px",
+              gap: "10px !important",
             }}
             cols={
               matches3col
