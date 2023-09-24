@@ -133,8 +133,7 @@ const images = [
   {
     img: "storyboards/seagul/images/56.jpg",
     title: "Freedom",
-    description:
-      "Seagull is a bird in the search of freedom",
+    description: "",
     videos: [
       "https://vimeo.com/833149917",
     ],
