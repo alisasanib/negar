@@ -144,7 +144,9 @@ export default function Home({
             );
           }}>
           <StoryBoardDetails
-            path={"seagul"}
+            path={
+              selectedProject?.path
+            }
             project={
               selectedProject
             }
@@ -165,6 +167,20 @@ const images = [
       "https://vimeo.com/833149917",
     ],
     path: "seagul",
+    genre: "Drama",
+  },
+  {
+    img: "storyboards/last_supper/GIF cover/43.jpg",
+    title: "Last Supper",
+    description:
+      "Seagull is a bird in the search of freedom",
+    videos: [
+      "storyboards/last_supper/Video/1.mp4",
+      "storyboards/last_supper/Video/2.mp4",
+      "storyboards/last_supper/Video/3.mp4",
+      "storyboards/last_supper/Video/4.mp4",
+    ],
+    path: "last_supper",
     genre: "Drama",
   },
 ];

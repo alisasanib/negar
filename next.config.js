@@ -22,7 +22,16 @@ const nextConfig = {
     webpack5: true,
   },
 
-  webpack(config) {
+  webpack: (
+    config,
+    {
+      buildId,
+      dev,
+      isServer,
+      defaultLoaders,
+      webpack,
+    }
+  ) => {
     config.resolve.fallback =
       {
         // if you miss it, all the other options in fallback, specified
@@ -32,6 +41,9 @@ const nextConfig = {
 
         fs: false, // the solution
       };
+    if (dev) {
+      config.devtool = "eval";
+    }
 
     return config;
   },

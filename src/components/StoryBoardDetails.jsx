@@ -28,10 +28,6 @@ const StoryBoardDetails = ({
     }
   }, []);
   function importAll(r) {
-    console.log(
-      "rrrrrrr",
-      r.keys()
-    );
     return r
       .keys()
       .filter(
@@ -44,7 +40,7 @@ const StoryBoardDetails = ({
 
   const images = importAll(
     require.context(
-      "/public/storyboards/seagul/images",
+      `/public/storyboards/seagul/images`,
       true,
       /\.(png|jpe?g|svg)$/
     )
@@ -52,10 +48,17 @@ const StoryBoardDetails = ({
     original: `/storyboards/${project.path}/images/${el}`,
     thumbnail: `/storyboards/${project.path}/images/${el}`,
   }));
-  console.log(
-    "imagesimages2",
-    images
-  );
+  const imageslastSupper =
+    importAll(
+      require.context(
+        `/public/storyboards/last_supper/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
   return (
     <div
       style={{
@@ -63,6 +66,10 @@ const StoryBoardDetails = ({
         margin: withMargin
           ? "20px 100px"
           : "0px",
+        display: "flex",
+        flexDirection:
+          "column",
+        gap: "20px",
       }}>
       <Typography
         id='modal-modal-title'
@@ -93,13 +100,18 @@ const StoryBoardDetails = ({
                 margin:
                   "auto",
               }}
-              url='https://vimeo.com/842171171'
+              url={video}
               controls
             />
           )
       )}
       <ImageGallery
-        images={images}
+        images={
+          project.path ===
+          "last_supper"
+            ? imageslastSupper
+            : images
+        }
       />
       <div
         style={{
