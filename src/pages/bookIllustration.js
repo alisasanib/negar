@@ -78,11 +78,12 @@ const itemData = [
     title: "Samak Ayar",
   },
   {
-    img: "children-books/book 05/7.jpg",
+    img: "children-books/book 05/4-3.jpg",
     large:
-      "children-books/book 05/large/7.jpg",
+      "children-books/book 05/large/4-3.jpg",
     title: "Samak Ayar",
   },
+
   {
     img: "children-books/book 01/5.jpg",
     large:
@@ -96,9 +97,9 @@ const itemData = [
     title: "Samak Ayar",
   },
   {
-    img: "children-books/book 05/4-3.jpg",
+    img: "children-books/book 05/7.jpg",
     large:
-      "children-books/book 05/large/4-3.jpg",
+      "children-books/book 05/large/7.jpg",
     title: "Samak Ayar",
   },
 
