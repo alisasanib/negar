@@ -58,9 +58,10 @@ export default function Home() {
 
 const itemData = [
   {
-    img: "babydragontooth.jpg",
-    title: "Bed",
+    img: "soldier.jpg",
+    title: "soldier",
   },
+
   {
     img: "children-books/illustrations/flight GIF-03.gif",
     large:
@@ -68,36 +69,27 @@ const itemData = [
     title: "space",
   },
   {
-    img: "chinese jelousy.jpg",
-    title: "chinese ",
-  },
-
-  {
-    img: "soldier.jpg",
-    title: "soldier",
-  },
-  {
-    img: "Oldman.jpg",
-    title: "Oldman",
-  },
-  {
     img: "Samak Ayar.jpg",
     title: "Samak Ayar",
-  },
-
-  {
-    img: "naked girl.jpg",
-    title: "naked girl",
-  },
-  {
-    img: "Emigration.jpg",
-    title: "Emigration",
   },
   {
     img: "FEDUAL JAPAN.jpg",
     title: "FEDUAL JAPAN",
   },
 
+  {
+    img: "Oldman.jpg",
+    title: "Oldman",
+  },
+  {
+    img: "Imprisoned-Designed for a mural.jpg",
+    title:
+      "Imprisoned-Designed for a mural",
+  },
+  {
+    img: "naked girl.jpg",
+    title: "naked girl",
+  },
   {
     img: "children-books/illustrations/GIF File-06.gif",
     large:
@@ -106,22 +98,29 @@ const itemData = [
   },
 
   {
+    img: "babydragontooth.jpg",
+    title: "Bed",
+  },
+  {
+    img: "last smile.jpg",
+    title: "last smile",
+  },
+
+  {
     img: "GonewiththeWind.jpg",
     title: "GonewiththeWind",
   },
 
   {
-    img: "Imprisoned-Designed for a mural.jpg",
-    title:
-      "Imprisoned-Designed for a mural",
-  },
-  {
     img: "in the train.jpg",
     title: "in the train",
   },
+  //
   {
-    img: "last smile.jpg",
-    title: "last smile",
+    img: "children-books/illustrations/After You.jpg",
+    large:
+      "children-books/illustrations/large/After You.jpg",
+    title: "space",
   },
   {
     img: "MODERN LITTLE PRINCE.jpg",
@@ -134,28 +133,32 @@ const itemData = [
     title: "space",
   },
   {
+    img: "chinese jelousy.jpg",
+    title: "chinese ",
+  },
+
+  {
+    img: "Emigration.jpg",
+    title: "Emigration",
+  },
+
+  {
+    img: "children-books/illustrations/sleepy in luggage- bigger.jpg",
+    large:
+      "children-books/illustrations/large/sleepy in luggage- bigger.jpg",
+    title: "space",
+  },
+
+  {
     img: "children-books/illustrations/4.jpg",
     large:
       "children-books/illustrations/large/4.jpg",
     title: "space",
   },
   {
-    img: "children-books/illustrations/After You.jpg",
-    large:
-      "children-books/illustrations/large/After You.jpg",
-    title: "space",
-  },
-
-  {
     img: "children-books/illustrations/final 4-text 2.jpg",
     large:
       "children-books/illustrations/large/final 4-text 2.jpg",
-    title: "space",
-  },
-  {
-    img: "children-books/illustrations/sleepy in luggage- bigger.jpg",
-    large:
-      "children-books/illustrations/large/sleepy in luggage- bigger.jpg",
     title: "space",
   },
 ];
