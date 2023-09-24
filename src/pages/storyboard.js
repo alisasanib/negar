@@ -35,18 +35,10 @@ export async function getStaticProps() {
 export default function Home({
   imageNames,
 }) {
-  console.log(
-    "imagesimages12",
-    imageNames
-  );
   const [
     hasWindow,
     setHasWindow,
   ] = useState(false);
-  const [
-    imagesnew2,
-    setImagesnew2,
-  ] = useState(null);
   const [
     isModalOpen,
     setIsModalOpen,
@@ -55,20 +47,6 @@ export default function Home({
     selectedProject,
     setSelectedProject,
   ] = useState(null);
-  useEffect(() => {
-    const list = [];
-    for (
-      let index = 1;
-      index < 70;
-      index++
-    ) {
-      list.push({
-        original: `storyboard -Last Supper/${index}.jpg`,
-        thumbnail: `storyboard -Last Supper/${index}.jpg`,
-      });
-    }
-    setImagesnew2(list);
-  }, []);
   useEffect(() => {
     if (
       typeof window !==
