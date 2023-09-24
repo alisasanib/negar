@@ -16,15 +16,10 @@ const inter = Inter({
 });
 
 export async function getStaticProps() {
-  console.log("123");
   const fileNames =
     fs.readdirSync(
       "./public/storyboards/seagul"
     );
-  console.log(
-    "fileNames",
-    fileNames
-  );
   return {
     props: {
       images: fileNames,
@@ -59,7 +54,6 @@ export default function Home({
   const handleOnClick = (
     id
   ) => {
-    console.log(id);
     setSelectedProject(
       images[id]
     );
@@ -97,12 +91,12 @@ export default function Home({
             className={
               styles.banner_text_container
             }>
-            <h2
+            <h3
               className={
                 styles.banner_text
               }>
               STORYBOARD
-            </h2>
+            </h3>
           </div>
         </div>
         <ImageListNonMason
@@ -151,27 +145,25 @@ const images = [
   {
     img: "storyboards/last_supper2/30.jpg",
     title: "Last Supper",
-    description:
-      "Seagull is a bird in the search of freedom",
+    description: "",
     videos: [
       "storyboards/last_supper/Video/1.mp4",
       "storyboards/last_supper/Video/2.mp4",
     ],
     path: "last_supper",
-    genre: "Drama",
+    genre: "Drama Scenes",
     gif: "storyboards/last_supper/GIF cover/resize.gif",
   },
   {
     img: "storyboards/last_supper/GIF cover/43.jpg",
     title: "Last Supper",
-    description:
-      "Seagull is a bird in the search of freedom",
+    description: "",
     videos: [
       "storyboards/last_supper/Video/3.mp4",
       "storyboards/last_supper/Video/4.mp4",
     ],
     path: "last_supper2",
-    genre: "Action",
+    genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
   },
 ];

@@ -372,8 +372,10 @@
   vertical-align: middle;
   line-height: 60px;
 
-  word-spacing: 50px;
-  font-size: 60px;
+  word-spacing: 3px;
+  font-size: 58px;
+  font-weight: 400;
+  font-weight: bold;
 }
 .about_me {
   font-family: "Quattrocento Sans",

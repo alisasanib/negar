@@ -28,10 +28,6 @@ const Navbar = ({
   children,
 }) => {
   const router = useRouter();
-  console.log(
-    "router.pathname",
-    router.pathname
-  );
   return (
     <>
       {router.pathname !==

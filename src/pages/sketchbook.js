@@ -51,7 +51,7 @@ export default function Home() {
             className={
               styles.banner_text_container
             }>
-            <h2
+            <h3
               className={
                 styles.banner_text
               }
@@ -60,7 +60,7 @@ export default function Home() {
                   "black",
               }}>
               SKETCHBOOK
-            </h2>
+            </h3>
           </div>
         </div>
         <Imagelist

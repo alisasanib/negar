@@ -40,12 +40,12 @@ export default function Home() {
             className={
               styles.banner_text_container
             }>
-            <h2
+            <h3
               className={
                 styles.banner_text
               }>
               ILLUSTRATION
-            </h2>
+            </h3>
           </div>
         </div>
         <Imagelist

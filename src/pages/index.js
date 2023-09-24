@@ -57,6 +57,8 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
+                fontWeight:
+                  "bold",
                 color:
                   "white",
                 textAlign:
@@ -65,6 +67,10 @@ export default function Home() {
                   "33.3vh",
                 curson:
                   "poiner",
+                textTransform:
+                  "uppercase",
+                fontSize:
+                  "58px",
               }}>
               Illustration
             </Typography>
@@ -89,6 +95,8 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
+                fontWeight:
+                  "bold",
                 color:
                   "white",
                 textAlign:
@@ -97,6 +105,10 @@ export default function Home() {
                   "33.3vh",
                 curson:
                   "poiner",
+                textTransform:
+                  "uppercase",
+                fontSize:
+                  "58px",
               }}>
               Storyboard
             </Typography>
@@ -121,6 +133,8 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
+                fontWeight:
+                  "bold",
                 color:
                   "white",
                 textAlign:
@@ -129,6 +143,10 @@ export default function Home() {
                   "33.3vh",
                 curson:
                   "poiner",
+                textTransform:
+                  "uppercase",
+                fontSize:
+                  "58px",
               }}>
               Animation
             </Typography>

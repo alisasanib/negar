@@ -41,14 +41,14 @@ export default function Animation() {
             className={
               styles.banner_text_container
             }>
-            <h2
+            <h3
               className={
                 styles.banner_text
               }>
               VISUAL
               DEVELOPMENT & ​
               ILLUSTRATION
-            </h2>
+            </h3>
           </div>
         </div> */}
         <div
