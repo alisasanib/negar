@@ -23,18 +23,11 @@ export const useImageLoader =
 
     useEffect(() => {
       let images = [];
-      console.log(
-        "itemsitems",
-        items
-      );
       items.forEach(
         (element, i) => {
           const img =
             new Image();
           img.onload = () => {
-            console.log(
-              "onload"
-            );
             _setImageSrc(
               (prevState) => {
                 const curr = [
@@ -74,10 +67,6 @@ export default function MasonryImageList({
     );
   const [gifs] =
     useImageLoader(itemData);
-  console.log(
-    "gifsgifs",
-    gifs
-  );
   const [
     isfullScreen,
     setIsfullScreen,
@@ -180,7 +169,8 @@ export default function MasonryImageList({
                           : // : item.gif
                             gifs[
                               id
-                            ]
+                            ] ??
+                            `${item.img}?w=248&fit=crop&auto=format`
                       }
                       srcSet={
                         gifId !==
@@ -189,7 +179,8 @@ export default function MasonryImageList({
                           : // : item.gif
                             gifs[
                               id
-                            ]
+                            ] ??
+                            `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
                       }
                       alt={
                         item.title
