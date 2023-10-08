@@ -19,25 +19,42 @@ export const useImageLoader =
     const [
       imageSrc,
       _setImageSrc,
-    ] = useState(null);
+    ] = useState([]);
 
     useEffect(() => {
       let images = [];
+      console.log(
+        "itemsitems",
+        items
+      );
       items.forEach(
-        (element) => {
+        (element, i) => {
           const img =
             new Image();
           img.onload = () => {
-            img.src =
-              element.gif;
-            images = [
-              ...images,
-              img,
-            ];
+            console.log(
+              "onload"
+            );
+            _setImageSrc(
+              (prevState) => {
+                const curr = [
+                  ...prevState,
+                ];
+                curr[i] =
+                  element.gif;
+
+                return curr;
+              }
+            );
           };
+          img.src =
+            element.gif;
+          images = [
+            ...images,
+            img,
+          ];
         }
       );
-      _setImageSrc(items);
     }, [items]);
 
     return [imageSrc];
@@ -160,19 +177,19 @@ export default function MasonryImageList({
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format`
-                          : gifs[
+                          : // : item.gif
+                            gifs[
                               id
                             ]
-                              .gif
                       }
                       srcSet={
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                          : gifs[
+                          : // : item.gif
+                            gifs[
                               id
                             ]
-                              .gif
                       }
                       alt={
                         item.title
