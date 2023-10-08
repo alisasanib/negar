@@ -135,7 +135,7 @@ const images = [
     title: "Freedom",
     description: "",
     videos: [
-      "https://vimeo.com/833149917",
+      "https://www.youtube.com/watch?v=eYXmhlMFALw",
     ],
     path: "seagul",
     genre: "Drama",

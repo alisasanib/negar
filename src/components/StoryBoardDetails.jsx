@@ -4,7 +4,7 @@ import {
   useEffect,
 } from "react";
 import Typography from "@mui/material/Typography";
-import ReactPlayer from "react-player/lazy";
+import ReactPlayer from "react-player";
 import ImageGallery from "./ImageGallery";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -104,26 +104,24 @@ const StoryBoardDetails = ({
         {project.description}
       </Typography>
       {project.videos.map(
-        (video) =>
-          hasWindow && (
-            // eslint-disable-next-line react/jsx-key
-            <ReactPlayer
-              width={"100%"}
-              height={
-                "auto !important"
-              }
-              style={{
-                height:
-                  "auto !important",
-                aspectRatio:
-                  "16/9",
-                margin:
-                  "auto",
-              }}
-              url={video}
-              controls
-            />
-          )
+        (video) => (
+          // eslint-disable-next-line react/jsx-key
+          <ReactPlayer
+            width={"100%"}
+            height={
+              "auto !important"
+            }
+            style={{
+              height:
+                "auto !important",
+              aspectRatio:
+                "16/9",
+              margin: "auto",
+            }}
+            url={video}
+            controls
+          />
+        )
       )}
       <ImageGallery
         images={
