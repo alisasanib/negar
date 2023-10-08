@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React, {
   useState,
+  useEffect,
 } from "react";
 import Box from "@mui/material/Box";
 import ImageList from "@mui/material/ImageList";
@@ -12,6 +13,35 @@ import Masonry, {
 } from "react-responsive-masonry";
 import FullScreenImage from "./FullScreenImage";
 import { Typography } from "@mui/material";
+
+export const useImageLoader =
+  (items) => {
+    const [
+      imageSrc,
+      _setImageSrc,
+    ] = useState(null);
+
+    useEffect(() => {
+      let images = [];
+      items.forEach(
+        (element) => {
+          const img =
+            new Image();
+          img.onload = () => {
+            img.src =
+              element.gif;
+            images = [
+              ...images,
+              img,
+            ];
+          };
+        }
+      );
+      _setImageSrc(items);
+    }, [items]);
+
+    return [imageSrc];
+  };
 
 export default function MasonryImageList({
   itemData,
@@ -25,7 +55,12 @@ export default function MasonryImageList({
     useMediaQuery(
       "(min-width:769px)"
     );
-
+  const [gifs] =
+    useImageLoader(itemData);
+  console.log(
+    "gifsgifs",
+    gifs
+  );
   const [
     isfullScreen,
     setIsfullScreen,
@@ -125,13 +160,19 @@ export default function MasonryImageList({
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format`
-                          : item.gif
+                          : gifs[
+                              id
+                            ]
+                              .gif
                       }
                       srcSet={
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                          : item.gif
+                          : gifs[
+                              id
+                            ]
+                              .gif
                       }
                       alt={
                         item.title
