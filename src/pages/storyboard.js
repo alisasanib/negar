@@ -136,6 +136,7 @@ const images = [
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=eYXmhlMFALw",
+      "https://www.youtube.com/watch?v=xDuMYMVnVbY",
     ],
     path: "seagul",
     genre: "Drama",
@@ -146,8 +147,8 @@ const images = [
     title: "Last Supper",
     description: "",
     videos: [
-      "storyboards/last_supper/Video/1.mp4",
-      "storyboards/last_supper/Video/2.mp4",
+      "https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s",
+      "https://www.youtube.com/watch?v=CHqASfAJ6bs",
     ],
     path: "last_supper",
     genre: "Drama Scenes",

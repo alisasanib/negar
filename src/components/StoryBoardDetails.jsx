@@ -4,7 +4,8 @@ import {
   useEffect,
 } from "react";
 import Typography from "@mui/material/Typography";
-import ReactPlayer from "react-player";
+import YoutubeReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player/file";
 import ImageGallery from "./ImageGallery";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
@@ -104,24 +105,52 @@ const StoryBoardDetails = ({
         {project.description}
       </Typography>
       {project.videos.map(
-        (video) => (
-          // eslint-disable-next-line react/jsx-key
-          <ReactPlayer
-            width={"100%"}
-            height={
-              "auto !important"
-            }
-            style={{
-              height:
-                "auto !important",
-              aspectRatio:
-                "16/9",
-              margin: "auto",
-            }}
-            url={video}
-            controls
-          />
-        )
+        (video, id) =>
+          video.includes(
+            "www.youtube.com"
+          ) ? (
+            // eslint-disable-next-line react/jsx-key
+            <div>
+              <YoutubeReactPlayer
+                key={id}
+                width={"100%"}
+                height={
+                  "auto !important"
+                }
+                style={{
+                  height:
+                    "auto !important",
+                  aspectRatio:
+                    "16/9",
+                  margin:
+                    "auto",
+                }}
+                url={video}
+                controls
+              />
+              {console.log(
+                "here"
+              )}
+            </div>
+          ) : (
+            <ReactPlayer
+              key={id}
+              width={"100%"}
+              height={
+                "auto !important"
+              }
+              style={{
+                height:
+                  "auto !important",
+                aspectRatio:
+                  "16/9",
+                margin:
+                  "auto",
+              }}
+              url={video}
+              controls
+            />
+          )
       )}
       <ImageGallery
         images={
