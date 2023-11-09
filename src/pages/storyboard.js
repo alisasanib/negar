@@ -166,4 +166,21 @@ const images = [
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
   },
+  {
+    img: "storyboards/matador/14.jpg",
+    title: "The Matador",
+    description: "",
+    videos: [
+      "storyboards/matador/00-matador.mp4",
+    ],
+    genre: "Acting Practice",
+  },
+  {
+    img: "storyboards/Halloween/images/20.jpg",
+    title: "Halloween",
+    description: "",
+    videos: [],
+    path: "Halloween",
+    genre: "Horror",
+  },
 ];

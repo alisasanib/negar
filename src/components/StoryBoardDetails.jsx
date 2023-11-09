@@ -152,17 +152,19 @@ const StoryBoardDetails = ({
             />
           )
       )}
-      <ImageGallery
-        images={
-          project.path ===
-          "last_supper"
-            ? imageslastSupper
-            : project.path ===
-              "last_supper2"
-            ? imageslastSupper2
-            : images
-        }
-      />
+      {project.path && (
+        <ImageGallery
+          images={
+            project.path ===
+            "last_supper"
+              ? imageslastSupper
+              : project.path ===
+                "last_supper2"
+              ? imageslastSupper2
+              : images
+          }
+        />
+      )}
       <div
         style={{
           marginBottom: 50,
