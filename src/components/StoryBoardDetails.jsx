@@ -72,6 +72,23 @@ const StoryBoardDetails = ({
       original: `/storyboards/${project.path}/images/${el}`,
       thumbnail: `/storyboards/${project.path}/images/${el}`,
     }));
+
+  const imagesHolloween =
+    importAll(
+      require.context(
+        `/public/storyboards/Halloween/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
+
+  console.log(
+    "imagesHolloweenimagesHolloween",
+    imagesHolloween
+  );
   return (
     <div
       style={{
@@ -161,6 +178,9 @@ const StoryBoardDetails = ({
               : project.path ===
                 "last_supper2"
               ? imageslastSupper2
+              : project.path ===
+                "Halloween"
+              ? imagesHolloween
               : images
           }
         />
