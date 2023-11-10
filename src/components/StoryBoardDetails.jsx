@@ -84,11 +84,6 @@ const StoryBoardDetails = ({
       original: `/storyboards/${project.path}/images/${el}`,
       thumbnail: `/storyboards/${project.path}/images/${el}`,
     }));
-
-  console.log(
-    "imagesHolloweenimagesHolloween",
-    imagesHolloween
-  );
   return (
     <div
       style={{
