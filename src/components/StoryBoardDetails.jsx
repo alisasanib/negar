@@ -140,9 +140,6 @@ const StoryBoardDetails = ({
                 url={video}
                 controls
               />
-              {console.log(
-                "here"
-              )}
             </div>
           ) : (
             <ReactPlayer

@@ -23,10 +23,6 @@ export const useImageLoader =
 
     useEffect(() => {
       let images = [];
-      console.log(
-        "items",
-        items
-      );
       items.forEach(
         (element, i) => {
           const img =
@@ -46,10 +42,6 @@ export const useImageLoader =
           };
           img.src =
             element.gif;
-          console.log(
-            "imgimg",
-            img
-          );
           images = [
             ...images,
             img,
@@ -82,8 +74,6 @@ export default function MasonryImageList({
   const [gifId, setGidId] =
     useState(null);
 
-  console.log("gifId", gifId);
-  console.log("gifs", gifs);
   const [
     displayedImage,
     setDisplayedImage,

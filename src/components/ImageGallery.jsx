@@ -4,10 +4,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 class MyGallery extends React.Component {
   render() {
-    console.log(
-      "this",
-      this.props
-    );
     if (
       !this.props.images ||
       !this.props.images
