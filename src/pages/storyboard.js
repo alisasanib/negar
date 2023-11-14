@@ -167,13 +167,14 @@ const images = [
     gif: "storyboards/last_supper2/resize.gif",
   },
   {
-    img: "storyboards/matador/14.jpg",
+    img: "storyboards/matador/cover 02.jpg",
     title: "The Matador",
     description: "",
     videos: [
-      "storyboards/matador/00-matador.mp4",
+      "https://www.youtube.com/watch?v=v8FDbhQnLiI",
     ],
     genre: "Acting Practice",
+    gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
   {
     img: "storyboards/Halloween/images/20.jpg",

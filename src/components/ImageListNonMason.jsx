@@ -23,6 +23,10 @@ export const useImageLoader =
 
     useEffect(() => {
       let images = [];
+      console.log(
+        "items",
+        items
+      );
       items.forEach(
         (element, i) => {
           const img =
@@ -42,6 +46,10 @@ export const useImageLoader =
           };
           img.src =
             element.gif;
+          console.log(
+            "imgimg",
+            img
+          );
           images = [
             ...images,
             img,
@@ -73,6 +81,9 @@ export default function MasonryImageList({
   ] = useState(false);
   const [gifId, setGidId] =
     useState(null);
+
+  console.log("gifId", gifId);
+  console.log("gifs", gifs);
   const [
     displayedImage,
     setDisplayedImage,
@@ -161,13 +172,11 @@ export default function MasonryImageList({
                       )
                     }>
                     <img
-                      // src={`/${item.img}`}
                       src={
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format`
-                          : // : item.gif
-                            gifs[
+                          : gifs[
                               id
                             ] ??
                             `${item.img}?w=248&fit=crop&auto=format`
@@ -176,8 +185,7 @@ export default function MasonryImageList({
                         gifId !==
                         id
                           ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                          : // : item.gif
-                            gifs[
+                          : gifs[
                               id
                             ] ??
                             `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`

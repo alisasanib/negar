@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-page-custom-font */
 import { useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import Navbar from "../components/Navbar";
@@ -68,10 +70,6 @@ export default function App({
           href='https://fonts.googleapis.com/css2?family=Cantarell&family=Quicksand:wght@500&display=swap'
           rel='stylesheet'
         />
-        {/* <link
-          href='https://fonts.googleapis.com/css?family=Quicksand&display=optional'
-          rel='stylesheet'
-        /> */}
         <link
           href='https://fonts.googleapis.com/css?family=Cantarell&display=optional'
           rel='stylesheet'
@@ -81,6 +79,7 @@ export default function App({
         <Component
           {...pageProps}
         />
+        <Analytics />
       </Navbar>
     </>
   );
