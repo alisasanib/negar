@@ -19,7 +19,7 @@ export default function Home() {
         </title>
         <meta
           name='description'
-          content='Negar Yaraghi - 2D Artist'
+          content='Negar Yaraghi - StoryBoard Artist - 2D Artist'
         />
         <meta
           name='viewport'

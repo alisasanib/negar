@@ -17,7 +17,7 @@ export default function Home() {
         </title>
         <meta
           name='description'
-          content='Negar Yaraghi - 2D Artist'
+          content='Negar Yaraghi - Illustration'
         />
         <meta
           name='viewport'

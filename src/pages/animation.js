@@ -35,7 +35,7 @@ export default function Animation() {
         </title>
         <meta
           name='description'
-          content='2D Artist'
+          content='Negar Yaraghi - Storyboard Artist - 2D Artist - Animation Showreel'
         />
         <meta
           name='viewport'
