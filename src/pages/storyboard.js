@@ -159,8 +159,7 @@ const images = [
     title: "Last Supper",
     description: "",
     videos: [
-      "storyboards/last_supper/Video/3.mp4",
-      "storyboards/last_supper/Video/4.mp4",
+      "https://youtu.be/ulASbkbcmj0?si=J0PyrQFdlKhNLiiP",
     ],
     path: "last_supper2",
     genre: "Action Scenes",
