@@ -62,13 +62,13 @@ export default function Animation() {
           }>
           Hi! I&apos;m Negar.
           <br />
-          <br /> I am a 2D
-          Artist and Animator.
-          I love animation
-          over any art,
-          because it is where
-          all arts are tied
-          together and a
+          <br /> I am a
+          Storyboard and 2D
+          Artist. I love
+          animation over any
+          art, because it is
+          where all arts are
+          tied together and a
           single work is
           produced.
           <br />
@@ -79,7 +79,8 @@ export default function Animation() {
           ads/animation from 0
           to 100. At this
           moment, I am working
-          on my short film
+          on the Storyboard of
+          different projects
           that I am really
           excited about, as a
           MA Animation
