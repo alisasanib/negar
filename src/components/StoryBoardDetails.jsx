@@ -146,7 +146,7 @@ const StoryBoardDetails = ({
           id='modal-modal-description'
           variant={
             project.withInitialImage
-              ? "h5"
+              ? "h4"
               : "h6"
           }>
           {
@@ -208,18 +208,6 @@ const StoryBoardDetails = ({
             />
           )
       )}
-      {project.withReelTitle ? (
-        <Typography
-          sx={{
-            color:
-              "black !important",
-            mt: 4,
-          }}
-          id='modal-modal-description'
-          variant='h6'>
-          My Story
-        </Typography>
-      ) : null}
       {project.path && (
         <ImageGallery
           images={
