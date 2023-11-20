@@ -176,9 +176,9 @@ const images = [
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
   {
-    img: "storyboards/Norman Rockwell assignment/cover.jpg",
+    img: "storyboards/Norman Rockwell assignment/cover2.jpg",
     title:
-      "Norman Rockwell assignment",
+      "Untold Story",
     path: "Norman Rockwell assignment",
     description: "",
     thumbnails: true,
@@ -186,7 +186,7 @@ const images = [
     description:
       "Behind every image lies an untold story. What's the story behind this exceptional masterpiece crafted by the one and only Norman Rockwell?",
     videos: [],
-    genre: "Acting Practice",
+    genre: "Comedy Action",
   },
   {
     img: "storyboards/Halloween/images/20.jpg",
