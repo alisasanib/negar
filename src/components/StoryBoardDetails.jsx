@@ -22,7 +22,7 @@ const StoryBoardDetails = ({
     useMediaQuery(
       "(min-width:1428px)"
     );
-    const initialImage2 =
+  const initialImage2 =
     useMediaQuery(
       "(min-width:1028px)"
     );
@@ -143,7 +143,9 @@ const StoryBoardDetails = ({
       <div
         style={{
           display: "flex",
-          gap: initialImage? "120px" : "20px",
+          gap: initialImage
+            ? "120px"
+            : "20px",
           flexDirection:
             initialImage2
               ? "row"
@@ -154,6 +156,12 @@ const StoryBoardDetails = ({
             color:
               "black !important",
             mt: 2,
+            textAlign:
+              "justify",
+            whiteSpace:
+              "pre-line",
+            textAlignLast:
+              "justify",
           }}
           id='modal-modal-description'
           variant={
