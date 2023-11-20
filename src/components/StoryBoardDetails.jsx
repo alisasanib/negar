@@ -22,6 +22,10 @@ const StoryBoardDetails = ({
     useMediaQuery(
       "(min-width:1428px)"
     );
+    const initialImage2 =
+    useMediaQuery(
+      "(min-width:1028px)"
+    );
   const [
     hasWindow,
     setHasWindow,
@@ -141,7 +145,7 @@ const StoryBoardDetails = ({
           display: "flex",
           gap: initialImage? "120px" : "20px",
           flexDirection:
-            initialImage
+            initialImage2
               ? "row"
               : "column",
         }}>
