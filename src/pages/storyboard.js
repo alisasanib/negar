@@ -190,7 +190,7 @@ const images = [
     genre: "Comedy Action",
   },
   {
-    img: "storyboards/Halloween/images/20.jpg",
+    img: "storyboards/Halloween/cover.jpg",
     title: "Halloween",
     description: "",
     videos: [],
