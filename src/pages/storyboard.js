@@ -176,12 +176,13 @@ const images = [
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
   {
-    img: "storyboards/Norman Rockwell assignment/cover2.jpg",
+    img: "storyboards/Norman Rockwell assignment/cover3.jpg",
     title:
       "Untold Story",
     path: "Norman Rockwell assignment",
     description: "",
     thumbnails: true,
+    withReelTitle: true,
     withInitialImage: true,
     description:
       "Behind every image lies an untold story. What's the story behind this exceptional masterpiece crafted by the one and only Norman Rockwell?",

@@ -132,25 +132,37 @@ const StoryBoardDetails = ({
         component='h2'>
         {project.title}
       </Typography>
-      <Typography
-        sx={{
-          color:
-            "black !important",
-          mt: 2,
-        }}
-        id='modal-modal-description'
-        variant='h6'>
-        {project.description}
-      </Typography>
-      {project.withInitialImage ? (
-        <img
-          style={{
-            width: "60%",
-            margin: "auto",
+      <div
+        style={{
+          display: "flex",
+          gap: "120px",
+        }}>
+        <Typography
+          sx={{
+            color:
+              "black !important",
+            mt: 2,
           }}
-          src={`storyboards/${project.path}/initial.jpg`}
-        />
-      ) : null}
+          id='modal-modal-description'
+          variant={
+            project.withInitialImage
+              ? "h5"
+              : "h6"
+          }>
+          {
+            project.description
+          }
+        </Typography>
+        {project.withInitialImage ? (
+          <img
+            style={{
+              width: "24%",
+              margin: "auto",
+            }}
+            src={`storyboards/${project.path}/initial.jpg`}
+          />
+        ) : null}
+      </div>
       {project.videos.map(
         (video, id) =>
           video.includes(
@@ -196,6 +208,18 @@ const StoryBoardDetails = ({
             />
           )
       )}
+      {project.withReelTitle ? (
+        <Typography
+          sx={{
+            color:
+              "black !important",
+            mt: 4,
+          }}
+          id='modal-modal-description'
+          variant='h6'>
+          My Story
+        </Typography>
+      ) : null}
       {project.path && (
         <ImageGallery
           images={
