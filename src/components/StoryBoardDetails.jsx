@@ -18,6 +18,10 @@ const StoryBoardDetails = ({
     useMediaQuery(
       "(min-width:900px)"
     );
+  const initialImage =
+    useMediaQuery(
+      "(min-width:1025px)"
+    );
   const [
     hasWindow,
     setHasWindow,
@@ -135,7 +139,11 @@ const StoryBoardDetails = ({
       <div
         style={{
           display: "flex",
-          gap: "120px",
+          gap: initialImage? "120px" : "20px",
+          flexDirection:
+            initialImage
+              ? "row"
+              : "column",
         }}>
         <Typography
           sx={{
@@ -146,7 +154,9 @@ const StoryBoardDetails = ({
           id='modal-modal-description'
           variant={
             project.withInitialImage
-              ? "h4"
+              ? initialImage
+                ? "h4"
+                : "h5"
               : "h6"
           }>
           {
@@ -156,7 +166,7 @@ const StoryBoardDetails = ({
         {project.withInitialImage ? (
           <img
             style={{
-              width: "24%",
+              width: "200px",
               margin: "auto",
             }}
             src={`storyboards/${project.path}/initial.jpg`}
