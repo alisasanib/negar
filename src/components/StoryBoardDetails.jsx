@@ -220,7 +220,7 @@ const StoryBoardDetails = ({
           sx={{
             color:
               "black !important",
-            mt: 2,
+            mt: 4,
           }}
           id='modal-modal-description'
           variant='h6'>
