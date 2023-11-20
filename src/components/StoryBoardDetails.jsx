@@ -20,7 +20,7 @@ const StoryBoardDetails = ({
     );
   const initialImage =
     useMediaQuery(
-      "(min-width:1025px)"
+      "(min-width:1428px)"
     );
   const [
     hasWindow,
