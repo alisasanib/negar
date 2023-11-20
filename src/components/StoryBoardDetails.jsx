@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable @next/next/no-img-element */
 import fs from "fs";
 import {
   useState,
@@ -84,6 +86,30 @@ const StoryBoardDetails = ({
       original: `/storyboards/${project.path}/images/${el}`,
       thumbnail: `/storyboards/${project.path}/images/${el}`,
     }));
+
+  const imagesNorman =
+    importAll(
+      require.context(
+        `/public/storyboards/Norman Rockwell assignment/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
+
+  const imagesNormanThumbnails =
+    importAll(
+      require.context(
+        `/public/storyboards/Norman Rockwell assignment/thumbnails`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/thumbnails/${el}`,
+      thumbnail: `/storyboards/${project.path}/thumbnails/${el}`,
+    }));
   return (
     <div
       style={{
@@ -116,6 +142,15 @@ const StoryBoardDetails = ({
         variant='h6'>
         {project.description}
       </Typography>
+      {project.withInitialImage ? (
+        <img
+          style={{
+            width: "60%",
+            margin: "auto",
+          }}
+          src={`storyboards/${project.path}/initial.jpg`}
+        />
+      ) : null}
       {project.videos.map(
         (video, id) =>
           video.includes(
@@ -173,10 +208,36 @@ const StoryBoardDetails = ({
               : project.path ===
                 "Halloween"
               ? imagesHolloween
+              : project.path ===
+                "Norman Rockwell assignment"
+              ? imagesNorman
               : images
           }
         />
       )}
+      {project.thumbnails ? (
+        <Typography
+          sx={{
+            color:
+              "black !important",
+            mt: 2,
+          }}
+          id='modal-modal-description'
+          variant='h6'>
+          Thumbnails
+        </Typography>
+      ) : null}
+      {project.path &&
+        project.thumbnails && (
+          <ImageGallery
+            images={
+              project.path ===
+              "Norman Rockwell assignment"
+                ? imagesNormanThumbnails
+                : images
+            }
+          />
+        )}
       <div
         style={{
           marginBottom: 50,

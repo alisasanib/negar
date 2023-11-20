@@ -176,6 +176,19 @@ const images = [
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
   {
+    img: "storyboards/Norman Rockwell assignment/cover.jpg",
+    title:
+      "Norman Rockwell assignment",
+    path: "Norman Rockwell assignment",
+    description: "",
+    thumbnails: true,
+    withInitialImage: true,
+    description:
+      "Behind every image lies an untold story. What's the story behind this exceptional masterpiece crafted by the one and only Norman Rockwell?",
+    videos: [],
+    genre: "Acting Practice",
+  },
+  {
     img: "storyboards/Halloween/images/20.jpg",
     title: "Halloween",
     description: "",
