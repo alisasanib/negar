@@ -13,7 +13,7 @@ export default function Animation() {
     <>
       <Head>
         <title>
-          Negar Yaraghi -
+          Negar Yaraghi-
           About me/Contact
         </title>
         <meta
