@@ -18,7 +18,7 @@ export default function Animation() {
         </title>
         <meta
           name='description'
-          content='Negar Yaraghi - About me/Contact details'
+          content='Negar Yaraghi- About me/Contact details'
         />
         <meta
           name='viewport'
