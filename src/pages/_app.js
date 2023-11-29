@@ -16,6 +16,7 @@ export default function App({
   const router = useRouter();
 
   useEffect(() => {
+    console.log("test");
     const handleRouteStart =
       () => NProgress.start();
     const handleRouteDone =
