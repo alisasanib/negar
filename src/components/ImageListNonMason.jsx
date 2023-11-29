@@ -43,7 +43,7 @@ export const useImageLoader =
             );
           };
           img.src =
-            "/" + element.gif;
+            element.gif;
           images = [
             ...images,
             img,
@@ -136,91 +136,88 @@ export default function MasonryImageList({
             {itemData.map(
               (item, id) => (
                 // eslint-disable-next-line react/jsx-key
-                <Link
-                  href={`/storyboard/${item.url}`}>
-                  <span
-                    onMouseOver={() =>
-                      setGidId(
-                        id
-                      )
-                    }
-                    onMouseOut={() =>
-                      setGidId(
-                        null
-                      )
+                <span
+                  onMouseOver={() =>
+                    setGidId(
+                      id
+                    )
+                  }
+                  onMouseOut={() =>
+                    setGidId(
+                      null
+                    )
+                  }
+                  style={{
+                    position:
+                      "relative",
+                  }}>
+                  <ImageListItem
+                    key={
+                      item.img
                     }
                     style={{
-                      position:
-                        "relative",
+                      cursor:
+                        "pointer",
+                    }}
+                    onClick={() => {
+                      handleOnClick(
+                        id
+                      );
                     }}>
-                    <ImageListItem
-                      key={
-                        item.img
+                    <img
+                      src={
+                        gifId !==
+                        id
+                          ? `${item.img}?w=248&fit=crop&auto=format`
+                          : gifs[
+                              id
+                            ] ??
+                            `${item.img}?w=248&fit=crop&auto=format`
                       }
-                      style={{
-                        cursor:
-                          "pointer",
-                      }}
-                      onClick={() => {
-                        handleOnClick(
-                          id
-                        );
-                      }}>
-                      <img
-                        src={
-                          gifId !==
-                          id
-                            ? `/${item.img}?w=248&fit=crop&auto=format`
-                            : gifs[
-                                id
-                              ] ??
-                              `/${item.img}?w=248&fit=crop&auto=format`
-                        }
-                        srcSet={
-                          gifId !==
-                          id
-                            ? `/${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                            : gifs[
-                                id
-                              ] ??
-                              `/${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                        }
-                        alt={
-                          item.title
-                        }
-                        loading='lazy'
-                      />
-                    </ImageListItem>
-
-                    <Typography
-                      id='modal-modal-description'
-                      variant='h6'
-                      sx={{
-                        mt: 1,
-                        position:
-                          "absolute",
-                        top: "90%",
-                        left: "3%",
-                        transform:
-                          "translate(0%, -90%)",
-                        color:
-                          "white",
-                        fontWeight:
-                          "bold",
-                        lineHeight: 0.9,
-                        fontSize:
-                          "2.25rem",
-                      }}>
-                      {
+                      srcSet={
+                        gifId !==
+                        id
+                          ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
+                          : gifs[
+                              id
+                            ] ??
+                            `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
+                      }
+                      alt={
                         item.title
                       }
-                      <br />
-                      {
-                        item.genre
-                      }
-                    </Typography>
-                  </span>
-                </Link>
+                      loading='lazy'
+                    />
+                  </ImageListItem>
+
+                  <Typography
+                    id='modal-modal-description'
+                    variant='h6'
+                    sx={{
+                      mt: 1,
+                      position:
+                        "absolute",
+                      top: "90%",
+                      left: "3%",
+                      transform:
+                        "translate(0%, -90%)",
+                      color:
+                        "white",
+                      fontWeight:
+                        "bold",
+                      lineHeight: 0.9,
+                      fontSize:
+                        "2.25rem",
+                    }}>
+                    {
+                      item.title
+                    }
+                    <br />
+                    {
+                      item.genre
+                    }
+                  </Typography>
+                </span>
               )
             )}
           </ImageList>
