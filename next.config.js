@@ -2,7 +2,6 @@
 const nextConfig = {
   reactStrictMode: false,
   styledComponents: true,
-  output: "export",
   images: {
     remotePatterns: [
       {
