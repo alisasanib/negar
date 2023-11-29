@@ -13,6 +13,8 @@ import Masonry, {
 } from "react-responsive-masonry";
 import FullScreenImage from "./FullScreenImage";
 import { Typography } from "@mui/material";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 export const useImageLoader =
   (items) => {
@@ -41,7 +43,7 @@ export const useImageLoader =
             );
           };
           img.src =
-            element.gif;
+            "/" + element.gif;
           images = [
             ...images,
             img,
@@ -57,6 +59,7 @@ export default function MasonryImageList({
   itemData,
   handleOnClick,
 }) {
+  const router = useRouter();
   const matches2col =
     useMediaQuery(
       "(min-width:600px)"
@@ -133,87 +136,91 @@ export default function MasonryImageList({
             {itemData.map(
               (item, id) => (
                 // eslint-disable-next-line react/jsx-key
-                <span
-                  onMouseOver={() =>
-                    setGidId(
-                      id
-                    )
-                  }
-                  onMouseOut={() =>
-                    setGidId(
-                      null
-                    )
-                  }
-                  style={{
-                    position:
-                      "relative",
-                  }}>
-                  <ImageListItem
-                    key={
-                      item.img
-                    }
-                    style={{
-                      cursor:
-                        "pointer",
-                    }}
-                    onClick={() =>
-                      handleOnClick(
+                <Link
+                  href={`/storyboard/${item.url}`}>
+                  <span
+                    onMouseOver={() =>
+                      setGidId(
                         id
                       )
-                    }>
-                    <img
-                      src={
-                        gifId !==
-                        id
-                          ? `${item.img}?w=248&fit=crop&auto=format`
-                          : gifs[
-                              id
-                            ] ??
-                            `${item.img}?w=248&fit=crop&auto=format`
+                    }
+                    onMouseOut={() =>
+                      setGidId(
+                        null
+                      )
+                    }
+                    style={{
+                      position:
+                        "relative",
+                    }}>
+                    <ImageListItem
+                      key={
+                        item.img
                       }
-                      srcSet={
-                        gifId !==
-                        id
-                          ? `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                          : gifs[
-                              id
-                            ] ??
-                            `${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
-                      }
-                      alt={
+                      style={{
+                        cursor:
+                          "pointer",
+                      }}
+                      onClick={() => {
+                        handleOnClick(
+                          id
+                        );
+                      }}>
+                      <img
+                        src={
+                          gifId !==
+                          id
+                            ? `/${item.img}?w=248&fit=crop&auto=format`
+                            : gifs[
+                                id
+                              ] ??
+                              `/${item.img}?w=248&fit=crop&auto=format`
+                        }
+                        srcSet={
+                          gifId !==
+                          id
+                            ? `/${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
+                            : gifs[
+                                id
+                              ] ??
+                              `/${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`
+                        }
+                        alt={
+                          item.title
+                        }
+                        loading='lazy'
+                      />
+                    </ImageListItem>
+
+                    <Typography
+                      id='modal-modal-description'
+                      variant='h6'
+                      sx={{
+                        mt: 1,
+                        position:
+                          "absolute",
+                        top: "90%",
+                        left: "3%",
+                        transform:
+                          "translate(0%, -90%)",
+                        color:
+                          "white",
+                        fontWeight:
+                          "bold",
+                        lineHeight: 0.9,
+                        fontSize:
+                          "2.25rem",
+                      }}>
+                      {
                         item.title
                       }
-                      loading='lazy'
-                    />
-                  </ImageListItem>
-                  <Typography
-                    id='modal-modal-description'
-                    variant='h6'
-                    sx={{
-                      mt: 1,
-                      position:
-                        "absolute",
-                      top: "90%",
-                      left: "3%",
-                      transform:
-                        "translate(0%, -90%)",
-                      color:
-                        "white",
-                      fontWeight:
-                        "bold",
-                      lineHeight: 0.9,
-                      fontSize:
-                        "2.25rem",
-                    }}>
-                    {
-                      item.title
-                    }
-                    <br />
-                    {
-                      item.genre
-                    }
-                  </Typography>
-                </span>
+                      <br />
+                      {
+                        item.genre
+                      }
+                    </Typography>
+                  </span>
+                </Link>
               )
             )}
           </ImageList>

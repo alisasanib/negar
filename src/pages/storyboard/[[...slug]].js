@@ -5,15 +5,30 @@ import {
 } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import CustomizedModalStoryBoard from "../components/CustomizedModalStoryBoard";
-import ImageListNonMason from "../components/ImageListNonMason";
+import CustomizedModalStoryBoard from "../../components/CustomizedModalStoryBoard";
+import ImageListNonMason from "../../components/ImageListNonMason";
 import StoryBoardDetails from "@/components/StoryBoardDetails";
 
 const inter = Inter({
   subsets: ["latin"],
 });
+
+export const getStaticPaths =
+  async () => {
+    return {
+      paths: [
+        {
+          params: {
+            slug: [],
+          },
+        },
+      ],
+      fallback: true,
+    };
+  };
 
 export async function getStaticProps() {
   const fileNames =
@@ -30,6 +45,23 @@ export async function getStaticProps() {
 export default function Home({
   imageNames,
 }) {
+  const router = useRouter();
+
+  useEffect(() => {
+    if (
+      router.query.slug
+        ?.length
+    ) {
+      handleOnClick(
+        images.findIndex(
+          (image) =>
+            image.url ===
+            router.query
+              .slug[0]
+        )
+      );
+    }
+  }, [router.query.slug]);
   const [
     hasWindow,
     setHasWindow,
@@ -108,6 +140,13 @@ export default function Home({
         <CustomizedModalStoryBoard
           open={isModalOpen}
           handleClose={() => {
+            router.push(
+              `/storyboard`,
+              undefined,
+              {
+                shallow: true,
+              }
+            );
             setSelectedProject(
               null
             );
@@ -133,6 +172,7 @@ const images = [
   {
     img: "storyboards/seagul/images/56.jpg",
     title: "Freedom",
+    url: "freedom",
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=eYXmhlMFALw",
@@ -145,6 +185,7 @@ const images = [
   {
     img: "storyboards/last_supper2/30.jpg",
     title: "Last Supper",
+    url: "last_supper",
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s",
@@ -157,6 +198,7 @@ const images = [
   {
     img: "storyboards/last_supper/GIF cover/43.jpg",
     title: "Last Supper",
+    url: "last_supper_action",
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=ulASbkbcmj0",
@@ -168,6 +210,7 @@ const images = [
   {
     img: "storyboards/matador/cover 02.jpg",
     title: "The Matador",
+    url: "matador",
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=v8FDbhQnLiI",
@@ -177,8 +220,8 @@ const images = [
   },
   {
     img: "storyboards/Norman Rockwell assignment/cover3.jpg",
-    title:
-      "Untold Story",
+    title: "Untold Story",
+    url: "untold_story",
     path: "Norman Rockwell assignment",
     description: "",
     thumbnails: true,
@@ -191,6 +234,7 @@ const images = [
   },
   {
     img: "storyboards/Halloween/cover.jpg",
+    url: "halloween",
     title: "Halloween",
     description: "",
     videos: [],

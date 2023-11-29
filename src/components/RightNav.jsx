@@ -55,7 +55,8 @@ const RightNav = ({
     <Ul open={open}>
       <li
         style={
-          pathname === "/illustration"
+          pathname ===
+          "/illustration"
             ? {
                 color:
                   "black",
@@ -75,8 +76,9 @@ const RightNav = ({
       </li>
       <li
         style={
-          pathname ===
-          "/storyboard"
+          pathname.includes(
+            "storyboard"
+          )
             ? {
                 color:
                   "black",
@@ -158,7 +160,7 @@ const RightNav = ({
           SKETCHBOOK
         </Link>
       </li>
-      
+
       <li
         style={
           pathname ===
