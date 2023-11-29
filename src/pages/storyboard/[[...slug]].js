@@ -26,7 +26,7 @@ export const getStaticPaths =
           },
         },
       ],
-      fallback: true,
+      fallback: false,
     };
   };
 
