@@ -28,15 +28,39 @@ export const getStaticPaths =
         },
         {
           params: {
-            slug: [
-              "freedom",
-            ],
+            slug: ["freedom"],
           },
         },
         {
           params: {
             slug: [
               "last_supper",
+            ],
+          },
+        },
+        {
+          params: {
+            slug: [
+              "last_supper_action",
+            ],
+          },
+        },
+        {
+          params: {
+            slug: ["matador"],
+          },
+        },
+        {
+          params: {
+            slug: [
+              "untold_story",
+            ],
+          },
+        },
+        {
+          params: {
+            slug: [
+              "halloween",
             ],
           },
         },
@@ -225,7 +249,7 @@ const images = [
       "https://www.youtube.com/watch?v=ulASbkbcmj0",
     ],
     url: "last_supper2",
-    path: "last_supper2",
+    path: "last_supper_action",
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
   },
