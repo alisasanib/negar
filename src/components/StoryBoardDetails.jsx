@@ -181,7 +181,7 @@ const StoryBoardDetails = ({
               width: "200px",
               margin: "auto",
             }}
-            src={`storyboards/${project.path}/initial.jpg`}
+            src={`/storyboards/${project.path}/initial.jpg`}
           />
         ) : null}
       </div>
