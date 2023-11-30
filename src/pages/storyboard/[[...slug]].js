@@ -28,7 +28,10 @@ export const getStaticPaths =
         },
         {
           params: {
-            slug: ["freedom"],
+            slug: [
+              "freedom",
+              "last_supper",
+            ],
           },
         },
       ],
