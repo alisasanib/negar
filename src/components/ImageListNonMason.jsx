@@ -200,12 +200,11 @@ export default function MasonryImageList({
                         mt: 1,
                         position:
                           "absolute",
-                        top: "90%",
-                        left: 0,
-                        right: 0,
-                        left: "3%",
+                        left: "10px",
+                        bottom:
+                          "10px",
                         transform:
-                          "translate(0%, -90%)",
+                          "translate(0%, 0%)",
                         color:
                           "white",
                         fontWeight:
