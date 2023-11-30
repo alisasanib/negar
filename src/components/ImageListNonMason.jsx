@@ -214,7 +214,7 @@ export default function MasonryImageList({
                         fontSize:
                           matches3col
                             ? "2.25rem"
-                            : "1.55rem",
+                            : "1.25rem",
                       }}>
                       {
                         item.title
