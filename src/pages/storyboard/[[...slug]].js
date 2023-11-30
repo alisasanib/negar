@@ -249,7 +249,7 @@ const images = [
       "https://www.youtube.com/watch?v=ulASbkbcmj0",
     ],
     url: "last_supper_action",
-    path: "last_supper_action",
+    path: "last_supper2",
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
   },
