@@ -248,7 +248,7 @@ const images = [
     videos: [
       "https://www.youtube.com/watch?v=ulASbkbcmj0",
     ],
-    url: "last_supper2",
+    url: "last_supper_action",
     path: "last_supper_action",
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
