@@ -202,7 +202,7 @@ export default function MasonryImageList({
                           "absolute",
                         top: matches3col
                           ? "90%"
-                          : "70%",
+                          : "50%",
                         left: "3%",
                         transform:
                           "translate(0%, -90%)",
