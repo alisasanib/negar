@@ -7,13 +7,34 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import CustomizedModalStoryBoard from "../components/CustomizedModalStoryBoard";
-import ImageListNonMason from "../components/ImageListNonMason";
+import CustomizedModalStoryBoard from "../../components/CustomizedModalStoryBoard";
+import ImageListNonMason from "../../components/ImageListNonMason";
 import StoryBoardDetails from "@/components/StoryBoardDetails";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/router";
 
 const inter = Inter({
   subsets: ["latin"],
 });
+
+export const getStaticPaths =
+  async () => {
+    return {
+      paths: [
+        {
+          params: {
+            slug: null,
+          },
+        },
+        {
+          params: {
+            slug: ["freedom"],
+          },
+        },
+      ],
+      fallback: true,
+    };
+  };
 
 export async function getStaticProps() {
   const fileNames =
@@ -30,6 +51,10 @@ export async function getStaticProps() {
 export default function Home({
   imageNames,
 }) {
+  const searchParams =
+    useSearchParams();
+  const router = useRouter();
+
   const [
     hasWindow,
     setHasWindow,
@@ -42,6 +67,22 @@ export default function Home({
     selectedProject,
     setSelectedProject,
   ] = useState(null);
+  useEffect(() => {
+    const slugParams =
+      searchParams.get(
+        "slug"
+      );
+    if (slugParams) {
+      setSelectedProject(
+        images.find(
+          (image) =>
+            image.url ===
+            slugParams
+        )
+      );
+      setIsModalOpen(true);
+    }
+  }, [searchParams]);
   useEffect(() => {
     if (
       typeof window !==
@@ -114,6 +155,17 @@ export default function Home({
             setIsModalOpen(
               false
             );
+            router.push(
+              {
+                pathname:
+                  "/storyboard",
+                query: {},
+              },
+              undefined,
+              {
+                shallow: true,
+              }
+            );
           }}>
           <StoryBoardDetails
             path={
@@ -134,6 +186,7 @@ const images = [
     img: "storyboards/seagul/images/56.jpg",
     title: "Freedom",
     description: "",
+    url: "freedom",
     videos: [
       "https://www.youtube.com/watch?v=eYXmhlMFALw",
       "https://www.youtube.com/watch?v=xDuMYMVnVbY",
@@ -145,6 +198,7 @@ const images = [
   {
     img: "storyboards/last_supper2/30.jpg",
     title: "Last Supper",
+    url: "last_supper",
     description: "",
     videos: [
       "https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s",
@@ -161,6 +215,7 @@ const images = [
     videos: [
       "https://www.youtube.com/watch?v=ulASbkbcmj0",
     ],
+    url: "last_supper2",
     path: "last_supper2",
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
@@ -172,6 +227,7 @@ const images = [
     videos: [
       "https://www.youtube.com/watch?v=v8FDbhQnLiI",
     ],
+    url: "matador",
     genre: "Acting Practice",
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
@@ -183,6 +239,7 @@ const images = [
     thumbnails: true,
     withReelTitle: true,
     withInitialImage: true,
+    url: "untold_story",
     description:
       "Behind every image lies an untold story. What's the story behind this exceptional masterpiece crafted by the one and only Norman Rockwell?",
     videos: [],
@@ -191,6 +248,7 @@ const images = [
   {
     img: "storyboards/Halloween/cover.jpg",
     title: "Halloween",
+    url: "halloween",
     description: "",
     videos: [],
     path: "Halloween",
