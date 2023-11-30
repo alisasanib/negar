@@ -205,7 +205,7 @@ export default function MasonryImageList({
                           : "50%",
                         left: "3%",
                         transform:
-                          "translate(0%, -90%)",
+                        matches3col? "translate(0%, -90%)" : "translate(0%, -110%)",
                         color:
                           "white",
                         fontWeight:
