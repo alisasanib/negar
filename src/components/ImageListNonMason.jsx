@@ -200,12 +200,12 @@ export default function MasonryImageList({
                         mt: 1,
                         position:
                           "absolute",
-                        top: matches3col
-                          ? "90%"
-                          : "50%",
+                        top: "90%",
+                        left: 0,
+                        right: 0,
                         left: "3%",
                         transform:
-                        matches3col? "translate(0%, -90%)" : "translate(0%, -110%)",
+                          "translate(0%, -90%)",
                         color:
                           "white",
                         fontWeight:
@@ -214,7 +214,7 @@ export default function MasonryImageList({
                         fontSize:
                           matches3col
                             ? "2.25rem"
-                            : "1.25rem",
+                            : "1.35rem",
                       }}>
                       {
                         item.title
