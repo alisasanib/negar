@@ -210,7 +210,7 @@ export default function MasonryImageList({
                           "bold",
                         lineHeight: 0.9,
                         fontSize:
-                          "2.25rem",
+                        matches3col? "2.25rem" : "1.25rem",
                       }}>
                       {
                         item.title
