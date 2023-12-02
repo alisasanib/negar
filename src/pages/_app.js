@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { useEffect } from "react";
-import { headers } from 'next/headers'
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -17,7 +16,19 @@ export default function App({
   const router = useRouter();
 
   useEffect(() => {
-    fetch("/api/geo")
+    fetch("/api/geo", {
+      method: "POST",
+      headers: {
+        Accept:
+          "application/json",
+        "Content-Type":
+          "application/json",
+      },
+      body: JSON.stringify({
+        a: 1,
+        b: "Textual content",
+      }),
+    })
       .then((res) =>
         res.json()
       )
