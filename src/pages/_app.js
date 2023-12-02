@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-page-custom-font */
 import { useEffect } from "react";
+import { headers } from 'next/headers'
 import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -14,6 +15,16 @@ export default function App({
   pageProps,
 }) {
   const router = useRouter();
+
+  useEffect(() => {
+    fetch("/api/geo")
+      .then((res) =>
+        res.json()
+      )
+      .then((data) => {
+        console.log(data);
+      });
+  }, []);
 
   useEffect(() => {
     console.log("test");
