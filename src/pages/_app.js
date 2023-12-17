@@ -25,20 +25,55 @@ export default function App({
           "application/json",
       },
       body: JSON.stringify({
-        a: 1,
-        b: "Textual content",
+        route: router.asPath,
       }),
     })
       .then((res) =>
         res.json()
       )
       .then((data) => {
-        console.log(data);
+        // console.log(data);
       });
-  }, []);
+    const handleRouteChange =
+      (url, { shallow }) => {
+        fetch("/api/geo", {
+          method: "POST",
+          headers: {
+            Accept:
+              "application/json",
+            "Content-Type":
+              "application/json",
+          },
+          body: JSON.stringify(
+            {
+              route: url,
+            }
+          ),
+        })
+          .then((res) =>
+            res.json()
+          )
+          .then((data) => {
+            // console.log(data);
+          });
+      };
+
+    router.events.on(
+      "routeChangeStart",
+      handleRouteChange
+    );
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off(
+        "routeChangeStart",
+        handleRouteChange
+      );
+    };
+  }, [router]);
 
   useEffect(() => {
-    console.log("test");
     const handleRouteStart =
       () => NProgress.start();
     const handleRouteDone =
