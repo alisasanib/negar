@@ -29,19 +29,17 @@ export default async function handler(
     today.getMonth() + 1; // Months start at 0!
   let dd = today.getDate();
 
-  const date = `${dd}-${mm}-${yyyy}`;
-  const { rows } =
-    await sql`SELECT * from geolocations where time=${
-      date || "1/12/2023"
-    } AND ipaddress=${
-      ip || "1"
-    }`;
-  if (!rows.length)
-    await sql`INSERT INTO geolocations (time, ipaddress, city, country) VALUES (${
-      date || "1/12/2023"
-    }, ${ip || "1"}, ${
-      city || "Cambridge"
-    }, ${country || "UK"});`;
+  const date = `${yyyy}-${mm}-${dd}`;
+  const data =
+    await req.json();
+  const { route } = data;
+  await sql`INSERT INTO geolocations (time, ipaddress, city, country, route) VALUES (${
+    date || "1/12/2023"
+  }, ${ip || "1"}, ${
+    city || "Cambridge"
+  }, ${country || "UK"}, ${
+    route || "homepage"
+  });`;
 
   return new Response(
     `<h1>Your location is ${city}</h1>
