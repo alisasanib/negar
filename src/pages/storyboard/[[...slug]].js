@@ -64,6 +64,20 @@ export const getStaticPaths =
             ],
           },
         },
+        {
+          params: {
+            slug: [
+              "wake-up!",
+            ],
+          },
+        },
+        {
+          params: {
+            slug: [
+              "begind-a-cartoon",
+            ],
+          },
+        },
       ],
       fallback: true,
     };
