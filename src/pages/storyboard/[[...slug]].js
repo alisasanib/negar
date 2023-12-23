@@ -74,7 +74,7 @@ export const getStaticPaths =
         {
           params: {
             slug: [
-              "begind-a-cartoon",
+              "behind-a-cartoon",
             ],
           },
         },
@@ -313,7 +313,7 @@ const images = [
   {
     img: "storyboards/05- story behind the cartoon/images/20.jpg",
     title: "Behind a Cartoon",
-    url: "begind-a-cartoon",
+    url: "behind-a-cartoon",
     description: "",
     videos: [],
     path: "05- story behind the cartoon",
