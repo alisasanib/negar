@@ -279,6 +279,15 @@ const images = [
     genre: "Comedy Action",
   },
   {
+    img: "storyboards/09- Personal Story- 2nd Pass/images/Waking up-21-01.jpg",
+    title: "Wake Up!",
+    url: "wake-up!",
+    description: "",
+    videos: [],
+    path: "09- Personal Story- 2nd Pass",
+    genre: "Comedy Action",
+  },
+  {
     img: "storyboards/Halloween/cover.jpg",
     title: "Halloween",
     url: "halloween",
@@ -286,5 +295,18 @@ const images = [
     videos: [],
     path: "Halloween",
     genre: "Horror",
+  },
+  {
+    img: "storyboards/05- story behind the cartoon/images/20.jpg",
+    title: "Behind a Cartoon",
+    url: "begind-a-cartoon",
+    description: "",
+    videos: [],
+    path: "05- story behind the cartoon",
+    genre: "Comedy",
+    description: `A story that builds up to a specific punchline; and the punchline was one of the Gary Larson's cartoons.
+    A series of amusing accidents unfolds, ultimately leading to that final frame that is his original cartoon. `,
+    withReelTitle: true,
+    withInitialImage: true,
   },
 ];

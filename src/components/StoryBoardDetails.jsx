@@ -118,6 +118,31 @@ const StoryBoardDetails = ({
       original: `/storyboards/${project.path}/thumbnails/${el}`,
       thumbnail: `/storyboards/${project.path}/thumbnails/${el}`,
     }));
+
+  const imagesBehind =
+    importAll(
+      require.context(
+        `/public/storyboards/05- story behind the cartoon/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
+
+  const imagesWakeup =
+    importAll(
+      require.context(
+        `/public/storyboards/09- Personal Story- 2nd Pass/images`,
+        true,
+        /\.(png|jpe?g|svg)$/
+      )
+    ).map((el) => ({
+      original: `/storyboards/${project.path}/images/${el}`,
+      thumbnail: `/storyboards/${project.path}/images/${el}`,
+    }));
+
   return (
     <div
       style={{
@@ -245,6 +270,12 @@ const StoryBoardDetails = ({
               : project.path ===
                 "Norman Rockwell assignment"
               ? imagesNorman
+              : project.path ===
+                "05- story behind the cartoon"
+              ? imagesBehind
+              : project.path ===
+                "09- Personal Story- 2nd Pass"
+              ? imagesWakeup
               : images
           }
         />
