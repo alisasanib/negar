@@ -1,8 +1,5 @@
 import fs from "fs";
-import {
-  useEffect,
-  useState,
-} from "react";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
@@ -17,77 +14,61 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export const getStaticPaths =
-  async () => {
-    return {
-      paths: [
-        {
-          params: {
-            slug: null,
-          },
+export const getStaticPaths = async () => {
+  return {
+    paths: [
+      {
+        params: {
+          slug: null,
         },
-        {
-          params: {
-            slug: ["freedom"],
-          },
+      },
+      {
+        params: {
+          slug: ["freedom"],
         },
-        {
-          params: {
-            slug: [
-              "last_supper",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["last_supper"],
         },
-        {
-          params: {
-            slug: [
-              "last_supper_action",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["last_supper_action"],
         },
-        {
-          params: {
-            slug: ["matador"],
-          },
+      },
+      {
+        params: {
+          slug: ["matador"],
         },
-        {
-          params: {
-            slug: [
-              "untold_story",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["untold_story"],
         },
-        {
-          params: {
-            slug: [
-              "halloween",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["halloween"],
         },
-        {
-          params: {
-            slug: [
-              "wake-up!",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["wake-up!"],
         },
-        {
-          params: {
-            slug: [
-              "behind-a-cartoon",
-            ],
-          },
+      },
+      {
+        params: {
+          slug: ["behind-a-cartoon"],
         },
-      ],
-      fallback: true,
-    };
+      },
+    ],
+    fallback: true,
   };
+};
 
 export async function getStaticProps() {
-  const fileNames =
-    fs.readdirSync(
-      "./public/storyboards/seagul"
-    );
+  const fileNames = fs.readdirSync("./public/storyboards/seagul");
   return {
     props: {
       images: fileNames,
@@ -95,64 +76,34 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({
-  imageNames,
-}) {
-  const searchParams =
-    useSearchParams();
+export default function Home({ imageNames }) {
+  const searchParams = useSearchParams();
   const router = useRouter();
 
-  const [
-    hasWindow,
-    setHasWindow,
-  ] = useState(false);
-  const [
-    isModalOpen,
-    setIsModalOpen,
-  ] = useState(false);
-  const [
-    selectedProject,
-    setSelectedProject,
-  ] = useState(null);
+  const [hasWindow, setHasWindow] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
   useEffect(() => {
-    const slugParams =
-      searchParams.get(
-        "slug"
-      );
+    const slugParams = searchParams.get("slug");
     if (slugParams) {
-      setSelectedProject(
-        images.find(
-          (image) =>
-            image.url ===
-            slugParams
-        )
-      );
+      setSelectedProject(images.find((image) => image.url === slugParams));
       setIsModalOpen(true);
     }
   }, [searchParams]);
   useEffect(() => {
-    if (
-      typeof window !==
-      "undefined"
-    ) {
+    if (typeof window !== "undefined") {
       setHasWindow(true);
     }
   }, []);
 
-  const handleOnClick = (
-    id
-  ) => {
-    setSelectedProject(
-      images[id]
-    );
+  const handleOnClick = (id) => {
+    setSelectedProject(images[id]);
     setIsModalOpen(true);
   };
   return (
     <>
       <Head>
-        <title>
-          Negar Yaraghi
-        </title>
+        <title>Negar Yaraghi</title>
         <meta
           name='description'
           content='Negar Yaraghi - StoryBoard Artist - Storyboards'
@@ -166,46 +117,24 @@ export default function Home({
           href='/favicon.ico'
         />
       </Head>
-      <main
-        className={
-          styles.main
-        }>
-        <div
-          className={[
-            styles.banner,
-            styles.storyboard,
-          ].join(" ")}>
-          <div
-            className={
-              styles.banner_text_container
-            }>
-            <h3
-              className={
-                styles.banner_text
-              }>
-              STORYBOARD
-            </h3>
+      <main className={styles.main}>
+        <div className={[styles.banner, styles.storyboard].join(" ")}>
+          <div className={styles.banner_text_container}>
+            <h3 className={styles.banner_text}>STORYBOARD</h3>
           </div>
         </div>
         <ImageListNonMason
           itemData={images}
-          handleOnClick={
-            handleOnClick
-          }
+          handleOnClick={handleOnClick}
         />
         <CustomizedModalStoryBoard
           open={isModalOpen}
           handleClose={() => {
-            setSelectedProject(
-              null
-            );
-            setIsModalOpen(
-              false
-            );
+            setSelectedProject(null);
+            setIsModalOpen(false);
             router.push(
               {
-                pathname:
-                  "/storyboard",
+                pathname: "/storyboard",
                 query: {},
               },
               undefined,
@@ -215,12 +144,8 @@ export default function Home({
             );
           }}>
           <StoryBoardDetails
-            path={
-              selectedProject?.path
-            }
-            project={
-              selectedProject
-            }
+            path={selectedProject?.path}
+            project={selectedProject}
           />
         </CustomizedModalStoryBoard>
       </main>
@@ -234,10 +159,8 @@ const images = [
     title: "Freedom",
     description: "",
     url: "freedom",
-    videos: [
-      "https://www.youtube.com/watch?v=eYXmhlMFALw",
-      "https://www.youtube.com/watch?v=xDuMYMVnVbY",
-    ],
+    videos: ["https://www.youtube.com/watch?v=eYXmhlMFALw", "https://www.youtube.com/watch?v=xDuMYMVnVbY"],
+    description: `"Freedom" is my personal project inspired by the forthcoming revolution in my country for freedom. It tells the story of a toy bird's quest for freedom. Despite facing challenges, the bird fights for its freedom. It follows the journey of the seagull longing to take flight in the sky but unexpectedly finding freedom amidst the vastness of the sea.`,
     path: "seagul",
     genre: "Drama",
     gif: "storyboards/seagul/GIF cover/resize.gif",
@@ -247,10 +170,7 @@ const images = [
     title: "Last Supper",
     url: "last_supper",
     description: "",
-    videos: [
-      "https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s",
-      "https://www.youtube.com/watch?v=CHqASfAJ6bs",
-    ],
+    videos: ["https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s", "https://www.youtube.com/watch?v=CHqASfAJ6bs"],
     path: "last_supper",
     genre: "Drama Scenes",
     gif: "storyboards/last_supper/GIF cover/resize.gif",
@@ -259,9 +179,7 @@ const images = [
     img: "storyboards/last_supper/GIF cover/43.jpg",
     title: "Last Supper",
     description: "",
-    videos: [
-      "https://www.youtube.com/watch?v=ulASbkbcmj0",
-    ],
+    videos: ["https://www.youtube.com/watch?v=ulASbkbcmj0"],
     url: "last_supper_action",
     path: "last_supper2",
     genre: "Action Scenes",
@@ -271,10 +189,9 @@ const images = [
     img: "storyboards/matador/cover 02.jpg",
     title: "The Matador",
     description: "",
-    videos: [
-      "https://www.youtube.com/watch?v=v8FDbhQnLiI",
-    ],
+    videos: ["https://www.youtube.com/watch?v=v8FDbhQnLiI"],
     url: "matador",
+    description: `"The Matador" is an exercise in portraying "CONFIDENCE" in acting. It features a scene where the matador, brimming with self-confidence, takes on the bull bare-handedly, showcasing his unwavering belief in his abilities.`,
     genre: "Acting Practice",
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
   },
@@ -287,8 +204,9 @@ const images = [
     withReelTitle: true,
     withInitialImage: true,
     url: "untold_story",
-    description:
-      "Behind every image lies an untold story. What's the story behind this exceptional masterpiece crafted by the one and only Norman Rockwell?",
+    gif: "storyboards/Norman Rockwell assignment/GIF/4.gif",
+    description: `Behind every image lies an untold story. 
+      This project is my attempt to delve into the narrative woven by the renowned artist Norman Rockwell in his exceptional masterpiece. Through this endeavor, I aimed to explore the connections among the three characters depicted and to provide a critique of the typical questions asked in job interviews, which often fail to fully assess the skills and abilities of applicants.`,
     videos: [],
     genre: "Comedy Action",
   },
@@ -298,8 +216,11 @@ const images = [
     url: "wake-up!",
     description: "",
     videos: [],
+    thumbnails: true,
     path: "09- Personal Story- 2nd Pass",
     genre: "Comedy Action",
+    description: `If you're a night owl like me, you probably know the feeling of your bed practically swallowing you up when it's time to drag yourself to work. Well, this story is right up your alley! It's a personal tale that paints a picture of the daily struggle I go through trying to peel myself out of bed each morning. And hey, trust me, it's not all on me!`,
+    gif: "storyboards/09- Personal Story- 2nd Pass/GIF/1.gif",
   },
   {
     img: "storyboards/Halloween/cover.jpg",
@@ -322,5 +243,6 @@ const images = [
     A series of amusing accidents unfolds, ultimately leading to that final frame that is his original cartoon. `,
     withReelTitle: true,
     withInitialImage: true,
+    gif: "storyboards/05- story behind the cartoon/GIF/2.gif",
   },
 ];
