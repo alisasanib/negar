@@ -207,7 +207,7 @@ const images = [
     gif: "storyboards/Norman Rockwell assignment/GIF/4.gif",
     description: `Behind every image lies an untold story. 
       This project is my attempt to delve into the narrative woven by the renowned artist Norman Rockwell in his exceptional masterpiece. Through this endeavor, I aimed to explore the connections among the three characters depicted and to provide a critique of the typical questions asked in job interviews, which often fail to fully assess the skills and abilities of applicants.`,
-    videos: [],
+    videos: ["https://www.youtube.com/watch?v=sX88n9zBRvc"],
     genre: "Comedy Action",
   },
   {
@@ -215,7 +215,7 @@ const images = [
     title: "Wake Up!",
     url: "wake-up!",
     description: "",
-    videos: [],
+    videos: ["https://www.youtube.com/watch?v=3aWlKW--bk4"],
     thumbnails: true,
     path: "09- Personal Story- 2nd Pass",
     genre: "Comedy Action",
