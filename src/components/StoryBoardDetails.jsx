@@ -57,14 +57,25 @@ const StoryBoardDetails = ({ project }) => {
     thumbnail: `/storyboards/${project.path}/thumbnails/${el}`,
   }));
 
+  function compareFilenames(a, b) {
+    // Extract numeric value from filename
+    const numA = parseInt(a.match(/\d+/)[0]);
+    const numB = parseInt(b.match(/\d+/)[0]);
+
+    // Compare numeric values
+    return numA - numB;
+  }
+
   console.log("selectedImages", project.images);
 
   const selectedImages = project.images?.length
-    ? (project.url === "wake-up!" ? project.images : project.images.sort(customSort)).map((el) => ({
-        key: el,
-        original: `/storyboards/${project.path}/images/${el}`,
-        thumbnail: `/storyboards/${project.path}/images/${el}`,
-      }))
+    ? (project.url === "wake-up!" ? project.images.sort(compareFilenames) : project.images.sort(customSort)).map(
+        (el) => ({
+          key: el,
+          original: `/storyboards/${project.path}/images/${el}`,
+          thumbnail: `/storyboards/${project.path}/images/${el}`,
+        })
+      )
     : [];
   return (
     <div
