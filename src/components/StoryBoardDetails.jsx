@@ -66,8 +66,6 @@ const StoryBoardDetails = ({ project }) => {
     return numA - numB;
   }
 
-  console.log("selectedImages", project.images);
-
   const selectedImages = project.images?.length
     ? (project.url === "wake-up!" ? project.images.sort(compareFilenames) : project.images.sort(customSort)).map(
         (el) => ({

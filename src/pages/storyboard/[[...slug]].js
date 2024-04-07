@@ -227,7 +227,7 @@ const images = [
     ),
   },
   {
-    img: "storyboards/09- Personal Story- 2nd Pass/images/Waking up-21-01.jpg",
+    img: "storyboards/09- Personal Story- 2nd Pass/images/75.jpg",
     title: "Wake Up!",
     url: "wake-up!",
     description: "",
@@ -238,7 +238,7 @@ const images = [
     description: `If you're a night owl like me, you probably know the feeling of your bed practically swallowing you up when it's time to drag yourself to work. Well, this story is right up your alley! It's a personal tale that paints a picture of the daily struggle I go through trying to peel myself out of bed each morning. And hey, trust me, it's not all on me!`,
     gif: "storyboards/09- Personal Story- 2nd Pass/GIF/1.gif",
     images: importAll(
-      require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpe?g|svg)$/)
+      require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpg|svg)$/)
     ),
   },
   {
