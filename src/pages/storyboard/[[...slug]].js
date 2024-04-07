@@ -10,6 +10,10 @@ import StoryBoardDetails from "@/components/StoryBoardDetails";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
 
+function importAll(r) {
+  return r.keys().filter((el) => !el.startsWith("public"));
+}
+
 const inter = Inter({
   subsets: ["latin"],
 });
@@ -76,6 +80,11 @@ export async function getStaticProps() {
   };
 }
 
+const IMAGES_MAP = {
+  "09- Personal Story- 2nd Pass": importAll(
+    require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpe?g|svg)$/)
+  ),
+};
 export default function Home({ imageNames }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -164,6 +173,7 @@ const images = [
     path: "seagul",
     genre: "Drama",
     gif: "storyboards/seagul/GIF cover/resize.gif",
+    images: importAll(require.context(`/public/storyboards/seagul/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
     img: "storyboards/last_supper2/30.jpg",
@@ -174,6 +184,7 @@ const images = [
     path: "last_supper",
     genre: "Drama Scenes",
     gif: "storyboards/last_supper/GIF cover/resize.gif",
+    images: importAll(require.context(`/public/storyboards/last_supper/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
     img: "storyboards/last_supper/GIF cover/43.jpg",
@@ -184,6 +195,7 @@ const images = [
     path: "last_supper2",
     genre: "Action Scenes",
     gif: "storyboards/last_supper2/resize.gif",
+    images: importAll(require.context(`/public/storyboards/last_supper2/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
     img: "storyboards/matador/cover 02.jpg",
@@ -194,6 +206,7 @@ const images = [
     description: `"The Matador" is an exercise in portraying "CONFIDENCE" in acting. It features a scene where the matador, brimming with self-confidence, takes on the bull bare-handedly, showcasing his unwavering belief in his abilities.`,
     genre: "Acting Practice",
     gif: "storyboards/matador/ezgif.com-video-to-gif (1).gif",
+    // images: importAll(require.context(`/public/storyboards/matador/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
     img: "storyboards/Norman Rockwell assignment/cover3.jpg",
@@ -209,6 +222,9 @@ const images = [
       This project is my attempt to delve into the narrative woven by the renowned artist Norman Rockwell in his exceptional masterpiece. Through this endeavor, I aimed to explore the connections among the three characters depicted and to provide a critique of the typical questions asked in job interviews, which often fail to fully assess the skills and abilities of applicants.`,
     videos: ["https://www.youtube.com/watch?v=sX88n9zBRvc"],
     genre: "Comedy Action",
+    images: importAll(
+      require.context(`/public/storyboards/Norman Rockwell assignment/images`, true, /\.(png|jpe?g|svg)$/)
+    ),
   },
   {
     img: "storyboards/09- Personal Story- 2nd Pass/images/Waking up-21-01.jpg",
@@ -221,6 +237,9 @@ const images = [
     genre: "Comedy Action",
     description: `If you're a night owl like me, you probably know the feeling of your bed practically swallowing you up when it's time to drag yourself to work. Well, this story is right up your alley! It's a personal tale that paints a picture of the daily struggle I go through trying to peel myself out of bed each morning. And hey, trust me, it's not all on me!`,
     gif: "storyboards/09- Personal Story- 2nd Pass/GIF/1.gif",
+    images: importAll(
+      require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpe?g|svg)$/)
+    ),
   },
   {
     img: "storyboards/Halloween/cover.jpg",
@@ -230,6 +249,7 @@ const images = [
     videos: [],
     path: "Halloween",
     genre: "Horror",
+    images: importAll(require.context(`/public/storyboards/Halloween/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
     img: "storyboards/05- story behind the cartoon/images/20.jpg",
@@ -244,5 +264,8 @@ const images = [
     withReelTitle: true,
     withInitialImage: true,
     gif: "storyboards/05- story behind the cartoon/GIF/2.gif",
+    images: importAll(
+      require.context(`/public/storyboards/05- story behind the cartoon/images`, true, /\.(png|jpe?g|svg)$/)
+    ),
   },
 ];

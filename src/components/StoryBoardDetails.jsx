@@ -21,68 +21,51 @@ const StoryBoardDetails = ({ project }) => {
   function importAll(r) {
     return r.keys().filter((el) => !el.startsWith("public"));
   }
+  function customSort(a, b) {
+    // Extract the numeric part and suffix (if exists) from the filenames
+    const regex = /^\.\/(\d+)(?:-(\d+))?\.jpg$/;
+    const [, numA, subNumA] = a.match(regex).map((part) => parseInt(part) || part);
+    const [, numB, subNumB] = b.match(regex).map((part) => parseInt(part) || part);
 
-  const images = importAll(require.context(`/public/storyboards/seagul/images`, true, /\.(png|jpe?g|svg)$/)).map(
-    (el) => ({
-      original: `/storyboards/${project.path}/images/${el}`,
-      thumbnail: `/storyboards/${project.path}/images/${el}`,
-    })
-  );
-  const imageslastSupper = importAll(
-    require.context(`/public/storyboards/last_supper/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
+    // Compare numeric parts first
+    if (numA !== numB) {
+      return numA - numB;
+    }
 
-  const imageslastSupper2 = importAll(
-    require.context(`/public/storyboards/last_supper2/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
+    // If numeric parts are the same, compare the suffix parts
+    if (subNumA !== subNumB) {
+      // Sort by the suffix part numerically if it exists, otherwise treat as a string
+      return (subNumA || "") - (subNumB || "");
+    }
 
-  const imagesHolloween = importAll(
-    require.context(`/public/storyboards/Halloween/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
-
-  const imagesNorman = importAll(
-    require.context(`/public/storyboards/Norman Rockwell assignment/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
+    // If both numeric parts and suffixes are the same, preserve the original order
+    return 0;
+  }
 
   const imagesNormanThumbnails = importAll(
     require.context(`/public/storyboards/Norman Rockwell assignment/thumbnails`, true, /\.(png|jpe?g|svg)$/)
   ).map((el) => ({
+    key: el,
     original: `/storyboards/${project.path}/thumbnails/${el}`,
     thumbnail: `/storyboards/${project.path}/thumbnails/${el}`,
   }));
   const imagesWakeupThumbnails = importAll(
     require.context(`/public/storyboards/09- Personal Story- 2nd Pass/thumbnails`, true, /\.(png|jpe?g|svg)$/)
   ).map((el) => ({
+    key: el,
     original: `/storyboards/${project.path}/thumbnails/${el}`,
     thumbnail: `/storyboards/${project.path}/thumbnails/${el}`,
   }));
 
-  const imagesBehind = importAll(
-    require.context(`/public/storyboards/05- story behind the cartoon/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
+  console.log("selectedImages", project.images);
 
-  const imagesWakeup = importAll(
-    require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpe?g|svg)$/)
-  ).map((el) => ({
-    original: `/storyboards/${project.path}/images/${el}`,
-    thumbnail: `/storyboards/${project.path}/images/${el}`,
-  }));
-
+  const selectedImages = project.images?.length
+    ? (project.url === "wake-up!" ? project.images : project.images.sort(customSort)).map((el) => ({
+        key: el,
+        original: `/storyboards/${project.path}/images/${el}`,
+        thumbnail: `/storyboards/${project.path}/images/${el}`,
+      }))
+    : [];
   return (
     <div
       style={{
@@ -130,7 +113,7 @@ const StoryBoardDetails = ({ project }) => {
       {project.videos.map((video, id) =>
         video.includes("www.youtube.com") ? (
           // eslint-disable-next-line react/jsx-key
-          <div>
+          <div key={id}>
             <YoutubeReactPlayer
               key={id}
               width={"100%"}
@@ -159,25 +142,7 @@ const StoryBoardDetails = ({ project }) => {
           />
         )
       )}
-      {project.path && (
-        <ImageGallery
-          images={
-            project.path === "last_supper"
-              ? imageslastSupper
-              : project.path === "last_supper2"
-              ? imageslastSupper2
-              : project.path === "Halloween"
-              ? imagesHolloween
-              : project.path === "Norman Rockwell assignment"
-              ? imagesNorman
-              : project.path === "05- story behind the cartoon"
-              ? imagesBehind
-              : project.path === "09- Personal Story- 2nd Pass"
-              ? imagesWakeup
-              : images
-          }
-        />
-      )}
+      {project.path && <ImageGallery images={selectedImages} />}
       {project.thumbnails ? (
         <Typography
           sx={{
