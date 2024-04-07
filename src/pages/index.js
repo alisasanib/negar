@@ -69,8 +69,6 @@ export default function Home() {
                   "poiner",
                 textTransform:
                   "uppercase",
-                fontSize:
-                  "58px",
               }}>
               Illustration
             </Typography>
@@ -107,8 +105,6 @@ export default function Home() {
                   "poiner",
                 textTransform:
                   "uppercase",
-                fontSize:
-                  "58px",
               }}>
               Storyboard
             </Typography>
@@ -145,8 +141,6 @@ export default function Home() {
                   "poiner",
                 textTransform:
                   "uppercase",
-                fontSize:
-                  "58px",
               }}>
               Animation
             </Typography>
