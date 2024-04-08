@@ -1,11 +1,9 @@
-import {
-  useState,
-  useEffect,
-} from "react";
+import VimeoReactPlayer from "react-player/vimeo";
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { useEffect, useState } from "react";
 // import Imagelist from "../components/Imagelist";
 // import ReactPlayer from "react-player/lazy";
 
@@ -14,25 +12,16 @@ const inter = Inter({
 });
 
 export default function Animation() {
-  // const [
-  //   hasWindow,
-  //   setHasWindow,
-  // ] = useState(false);
-  // useEffect(() => {
-  //   if (
-  //     typeof window !==
-  //     "undefined"
-  //   ) {
-  //     setHasWindow(true);
-  //   }
-  // }, []);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
+
   return (
     <>
       <Head>
-        <title>
-          Negar Yaraghi -
-          Animation
-        </title>
+        <title>Negar Yaraghi - Animation</title>
         <meta
           name='description'
           content='Negar Yaraghi - Storyboard Artist - 2D Artist - Animation Showreel'
@@ -46,34 +35,29 @@ export default function Animation() {
           href='/favicon.ico'
         />
       </Head>
-      <main
-        className={
-          styles.main
-        }>
-        {/* <div
-          className={
-            styles.banner
-          }>
-          <div
-            className={
-              styles.banner_text_container
-            }>
-            <h3
-              className={
-                styles.banner_text
-              }>
-              VISUAL
-              DEVELOPMENT & ​
-              ILLUSTRATION
-            </h3>
+      <main className={styles.main}>
+        {domLoaded && (
+          <div style={{ width: "100%" }}>
+            <VimeoReactPlayer
+              width={"100%"}
+              height={"auto !important"}
+              style={{
+                height: "auto !important",
+                aspectRatio: "21/9",
+                margin: "auto",
+              }}
+              url={"https://player.vimeo.com/video/833417806?h=0e74b87abc"}
+              controls
+            />
           </div>
-        </div> */}
-        <iframe
+        )}
+        {/* <iframe
           src='https://player.vimeo.com/video/833417806?h=0e74b87abc'
           className='video-iframe'
           frameborder='0'
+          width={"90%"}
           allow='autoplay; fullscreen; picture-in-picture'
-          allowfullscreen></iframe>
+          allowfullscreen></iframe> */}
       </main>
     </>
   );
