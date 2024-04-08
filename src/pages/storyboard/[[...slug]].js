@@ -1,8 +1,8 @@
 import fs from "fs";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
+import YoutubeReactPlayer from "react-player/youtube";
 import styles from "@/styles/Home.module.css";
 import CustomizedModalStoryBoard from "../../components/CustomizedModalStoryBoard";
 import ImageListNonMason from "../../components/ImageListNonMason";
@@ -80,18 +80,21 @@ export async function getStaticProps() {
   };
 }
 
-const IMAGES_MAP = {
-  "09- Personal Story- 2nd Pass": importAll(
-    require.context(`/public/storyboards/09- Personal Story- 2nd Pass/images`, true, /\.(png|jpe?g|svg)$/)
-  ),
-};
 export default function Home({ imageNames }) {
   const searchParams = useSearchParams();
+  const [aspectRatio, setAspectRation] = useState("25/9");
   const router = useRouter();
+  const playerRef = useRef(null);
 
+  const [playing, setPlaying] = useState(false);
   const [hasWindow, setHasWindow] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
+  const [domLoaded, setDomLoaded] = useState(false);
+
+  useEffect(() => {
+    setDomLoaded(true);
+  }, []);
   useEffect(() => {
     const slugParams = searchParams.get("slug");
     if (slugParams) {
@@ -126,12 +129,41 @@ export default function Home({ imageNames }) {
           href='/favicon.ico'
         />
       </Head>
+
+      {domLoaded && (
+        <div
+          style={{ position: "relative" }}
+          ref={playerRef}>
+          <YoutubeReactPlayer
+            id='widget22'
+            width={"90%"}
+            height={"auto !important"}
+            style={{
+              height: "100px !important",
+              aspectRatio,
+              margin: "auto",
+            }}
+            url={"https://www.youtube.com/watch?v=KRi_tEA1Ei0"}
+            controls
+            playing={playing}
+            onPlay={() => setPlaying(true)}
+            onPause={() => setPlaying(false)}
+            full
+          />
+          <div
+            style={playing ? { display: "none" } : {}}
+            onClick={() => setPlaying(true)}
+            className={styles.react_player_title}>
+            Storyboard Showreel
+          </div>
+        </div>
+      )}
       <main className={styles.main}>
-        <div className={[styles.banner, styles.storyboard].join(" ")}>
+        {/* <div className={[styles.banner, styles.storyboard].join(" ")}>
           <div className={styles.banner_text_container}>
             <h3 className={styles.banner_text}>STORYBOARD</h3>
           </div>
-        </div>
+        </div> */}
         <ImageListNonMason
           itemData={images}
           handleOnClick={handleOnClick}
@@ -176,7 +208,7 @@ const images = [
     images: importAll(require.context(`/public/storyboards/seagul/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
-    img: "storyboards/last_supper2/30.jpg",
+    img: "storyboards/last_supper/images/19.jpg",
     title: "Last Supper",
     url: "last_supper",
     description: "",
