@@ -284,7 +284,7 @@ const images = [
     images: importAll(require.context(`/public/storyboards/Halloween/images`, true, /\.(png|jpe?g|svg)$/)),
   },
   {
-    img: "storyboards/05- story behind the cartoon/images/20.jpg",
+    img: "storyboards/05- story behind the cartoon/images/45.jpg",
     title: "Behind a Cartoon",
     url: "behind-a-cartoon",
     description: "",
