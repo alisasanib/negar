@@ -211,7 +211,9 @@ const images = [
     img: "storyboards/last_supper/images/19.jpg",
     title: "Last Supper",
     url: "last_supper",
-    description: "",
+    description: `"Last Supper" is my personal project in the Drama-Action genre, drawing inspiration from Kazuo Ishiguro's book "A Family Supper." 
+Parts 1 and 2 delve into the backstory to uncover the reasons for the hatred, while Part 3 (the next section in my SB page) features the action scene where revenge is sought. 
+This story is a work in progress.`,
     videos: ["https://www.youtube.com/watch?v=7eJt55VE5cg&t=1s", "https://www.youtube.com/watch?v=CHqASfAJ6bs"],
     path: "last_supper",
     genre: "Drama Scenes",
@@ -221,7 +223,9 @@ const images = [
   {
     img: "storyboards/last_supper/GIF cover/43.jpg",
     title: "Last Supper",
-    description: "",
+    description: `"Last Supper" is my personal project in the Drama-Action genre, drawing inspiration from Kazuo Ishiguro's book "A Family Supper." 
+Parts 1 and 2 (the previous section in my SB page) delve into the backstory to uncover the reasons for the hatred, while Part 3  features the action scene where revenge is sought. 
+This story is a work in progress.`,
     videos: ["https://www.youtube.com/watch?v=ulASbkbcmj0"],
     url: "last_supper_action",
     path: "last_supper2",
