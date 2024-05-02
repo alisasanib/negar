@@ -95,22 +95,6 @@ export default function App({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css?family=Cantarell&display=optional'
           rel='stylesheet'
         />
-        <meta
-          property='og:title'
-          content='Negar Yaraghi - Storyboard/2D Artist'
-        />
-        <meta
-          property='og:type'
-          content='website'
-        />
-        <meta
-          property='og:url'
-          content='https://www.negaryaraghi.com'
-        />
-        <meta
-          property='og:image'
-          content='https://www.negaryaraghi.com/soldier.jpg'
-        />
       </Head>
       <Navbar>
         <Component {...pageProps} />
