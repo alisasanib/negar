@@ -9,106 +9,66 @@ import "@/styles/globals.css";
 import "nprogress/nprogress.css";
 import "./storyboard.css";
 
-export default function App({
-  Component,
-  pageProps,
-}) {
+export default function App({ Component, pageProps }) {
   const router = useRouter();
 
   useEffect(() => {
     fetch("/api/geo", {
       method: "POST",
       headers: {
-        Accept:
-          "application/json",
-        "Content-Type":
-          "application/json",
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         route: router.asPath,
       }),
     })
-      .then((res) =>
-        res.json()
-      )
+      .then((res) => res.json())
       .then((data) => {
         // console.log(data);
       });
   }, []);
 
   useEffect(() => {
-    const handleRouteChange =
-      (url, { shallow }) => {
-        fetch("/api/geo", {
-          method: "POST",
-          headers: {
-            Accept:
-              "application/json",
-            "Content-Type":
-              "application/json",
-          },
-          body: JSON.stringify(
-            {
-              route: url,
-            }
-          ),
-        })
-          .then((res) =>
-            res.json()
-          )
-          .then((data) => {
-            // console.log(data);
-          });
-      };
+    const handleRouteChange = (url, { shallow }) => {
+      fetch("/api/geo", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          route: url,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          // console.log(data);
+        });
+    };
 
-    router.events.on(
-      "routeChangeStart",
-      handleRouteChange
-    );
+    router.events.on("routeChangeStart", handleRouteChange);
 
     // If the component is unmounted, unsubscribe
     // from the event with the `off` method:
     return () => {
-      router.events.off(
-        "routeChangeStart",
-        handleRouteChange
-      );
+      router.events.off("routeChangeStart", handleRouteChange);
     };
   }, [router]);
 
   useEffect(() => {
-    const handleRouteStart =
-      () => NProgress.start();
-    const handleRouteDone =
-      () => NProgress.done();
+    const handleRouteStart = () => NProgress.start();
+    const handleRouteDone = () => NProgress.done();
 
-    router.events.on(
-      "routeChangeStart",
-      handleRouteStart
-    );
-    router.events.on(
-      "routeChangeComplete",
-      handleRouteDone
-    );
-    router.events.on(
-      "routeChangeError",
-      handleRouteDone
-    );
+    router.events.on("routeChangeStart", handleRouteStart);
+    router.events.on("routeChangeComplete", handleRouteDone);
+    router.events.on("routeChangeError", handleRouteDone);
 
     return () => {
       // Make sure to remove the event handler on unmount!
-      router.events.off(
-        "routeChangeStart",
-        handleRouteStart
-      );
-      router.events.off(
-        "routeChangeComplete",
-        handleRouteDone
-      );
-      router.events.off(
-        "routeChangeError",
-        handleRouteDone
-      );
+      router.events.off("routeChangeStart", handleRouteStart);
+      router.events.off("routeChangeComplete", handleRouteDone);
+      router.events.off("routeChangeError", handleRouteDone);
     };
   }, []);
   return (
@@ -135,11 +95,25 @@ export default function App({
           href='https://fonts.googleapis.com/css?family=Cantarell&display=optional'
           rel='stylesheet'
         />
+        <meta
+          property='og:title'
+          content='The Rock'
+        />
+        <meta
+          property='og:type'
+          content='video.movie'
+        />
+        <meta
+          property='og:url'
+          content='https://www.negaryaraghi.com'
+        />
+        <meta
+          property='og:image'
+          content='https://www.negaryaraghi.com/soldier.jpg'
+        />
       </Head>
       <Navbar>
-        <Component
-          {...pageProps}
-        />
+        <Component {...pageProps} />
         <Analytics />
       </Navbar>
     </>

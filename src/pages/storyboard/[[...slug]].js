@@ -126,23 +126,19 @@ export default function Home({ imageNames }) {
         />
         <meta
           property='og:title'
-          content='Your Website Title'
+          content='The Rock'
         />
         <meta
-          property='og:description'
-          content='Description of your website'
+          property='og:type'
+          content='video.movie'
+        />
+        <meta
+          property='og:url'
+          content='https://www.negaryaraghi.com'
         />
         <meta
           property='og:image'
           content='https://www.negaryaraghi.com/soldier.jpg'
-        />
-        <meta
-          property='og:url'
-          content='URL of the page'
-        />
-        <meta
-          property='og:type'
-          content='website'
         />
         <link
           rel='icon'

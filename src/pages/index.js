@@ -14,9 +14,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>
-          Negar Yaraghi
-        </title>
+        <title>Negar Yaraghi</title>
         <meta
           name='description'
           content='Negar Yaraghi - StoryBoard Artist - 2D Artist'
@@ -24,6 +22,22 @@ export default function Home() {
         <meta
           name='viewport'
           content='width=device-width, initial-scale=1'
+        />
+        <meta
+          property='og:title'
+          content='The Rock'
+        />
+        <meta
+          property='og:type'
+          content='video.movie'
+        />
+        <meta
+          property='og:url'
+          content='https://www.negaryaraghi.com'
+        />
+        <meta
+          property='og:image'
+          content='https://www.negaryaraghi.com/soldier.jpg'
         />
         <link
           rel='icon'
@@ -35,21 +49,15 @@ export default function Home() {
           padding: 0,
           height: "100vh",
         }}
-        className={
-          styles.main
-        }>
+        className={styles.main}>
         <Link
           style={{
             width: "100%",
             height: "33.3vh",
-            backgroundSize:
-              "cover",
-            backgroundPosition:
-              "center center",
-            backgroundRepeat:
-              "no-repeat",
-            backgroundImage:
-              "url(/GonewiththeWind.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: "url(/GonewiththeWind.jpg)",
           }}
           href='/illustration'>
           <div>
@@ -57,18 +65,12 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
-                fontWeight:
-                  "bold",
-                color:
-                  "white",
-                textAlign:
-                  "center",
-                lineHeight:
-                  "33.3vh",
-                curson:
-                  "poiner",
-                textTransform:
-                  "uppercase",
+                fontWeight: "bold",
+                color: "white",
+                textAlign: "center",
+                lineHeight: "33.3vh",
+                curson: "poiner",
+                textTransform: "uppercase",
               }}>
               Illustration
             </Typography>
@@ -78,14 +80,10 @@ export default function Home() {
           style={{
             width: "100%",
             height: "33.3vh",
-            backgroundSize:
-              "cover",
-            backgroundPosition:
-              "center center",
-            backgroundRepeat:
-              "no-repeat",
-            backgroundImage:
-              "url(/storyboards/seagul/images/41.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: "url(/storyboards/seagul/images/41.jpg)",
           }}
           href='/storyboard'>
           <div>
@@ -93,18 +91,12 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
-                fontWeight:
-                  "bold",
-                color:
-                  "white",
-                textAlign:
-                  "center",
-                lineHeight:
-                  "33.3vh",
-                curson:
-                  "poiner",
-                textTransform:
-                  "uppercase",
+                fontWeight: "bold",
+                color: "white",
+                textAlign: "center",
+                lineHeight: "33.3vh",
+                curson: "poiner",
+                textTransform: "uppercase",
               }}>
               Storyboard
             </Typography>
@@ -114,14 +106,10 @@ export default function Home() {
           style={{
             width: "100%",
             height: "33.3vh",
-            backgroundSize:
-              "cover",
-            backgroundPosition:
-              "center center",
-            backgroundRepeat:
-              "no-repeat",
-            backgroundImage:
-              "url(/flight.gif)",
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+            backgroundRepeat: "no-repeat",
+            backgroundImage: "url(/flight.gif)",
           }}
           href='/animation'>
           <div>
@@ -129,18 +117,12 @@ export default function Home() {
               id='modal-modal-description'
               variant='h3'
               sx={{
-                fontWeight:
-                  "bold",
-                color:
-                  "white",
-                textAlign:
-                  "center",
-                lineHeight:
-                  "33.3vh",
-                curson:
-                  "poiner",
-                textTransform:
-                  "uppercase",
+                fontWeight: "bold",
+                color: "white",
+                textAlign: "center",
+                lineHeight: "33.3vh",
+                curson: "poiner",
+                textTransform: "uppercase",
               }}>
               Animation
             </Typography>
