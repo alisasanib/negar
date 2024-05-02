@@ -134,7 +134,7 @@ export default function Home({ imageNames }) {
         />
         <meta
           property='og:image'
-          content='/soldier.jpg'
+          content='/public/soldier.jpg'
         />
         <meta
           property='og:url'
