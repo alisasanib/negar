@@ -125,20 +125,24 @@ export default function Home({ imageNames }) {
           content='width=device-width, initial-scale=1'
         />
         <meta
+          property='og:title'
+          content='Your Website Title'
+        />
+        <meta
+          property='og:description'
+          content='Description of your website'
+        />
+        <meta
           property='og:image'
-          content='<generated>'
+          content='/soldier.jpg'
         />
         <meta
-          property='og:image:type'
-          content='<generated>'
+          property='og:url'
+          content='URL of the page'
         />
         <meta
-          property='og:image:width'
-          content='<generated>'
-        />
-        <meta
-          property='og:image:height'
-          content='<generated>'
+          property='og:type'
+          content='website'
         />
         <link
           rel='icon'
