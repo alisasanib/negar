@@ -25,11 +25,11 @@ export default function Home() {
         />
         <meta
           property='og:title'
-          content='The Rock'
+          content='Negar Yaraghi - Storyboard/2D Artist'
         />
         <meta
           property='og:type'
-          content='video.movie'
+          content='website'
         />
         <meta
           property='og:url'
