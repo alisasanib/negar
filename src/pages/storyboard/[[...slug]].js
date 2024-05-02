@@ -118,7 +118,7 @@ export default function Home({ imageNames }) {
         <title>Negar Yaraghi</title>
         <meta
           name='description'
-          content='Negar Yaraghiii - StoryBoard Artist - Storyboards'
+          content='Negar Yaraghi - StoryBoard Artist - Storyboards'
         />
         <meta
           name='viewport'
@@ -138,7 +138,8 @@ export default function Home({ imageNames }) {
         />
         <meta
           property='og:image'
-          content='https://www.negaryaraghi.com/soldier.jpg'
+          // content='https://www.negaryaraghi.com/soldier.jpg'
+          content='https://www.negaryaraghi.com/storyboards/last_supper/images/30.jpg'
         />
         <link
           rel='icon'
