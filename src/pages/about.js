@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import PdfViewer from "@/components/PDFViewer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -47,6 +48,7 @@ export default function Animation() {
           style={{
             marginTop: 30,
             color: "black !important",
+            textAlign: "justify",
           }}
           className={styles.about_me}>
           Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart!
@@ -91,14 +93,7 @@ export default function Animation() {
           <br />
           <br />
           <br />
-          <br />
-          <br />
-          <iframe
-            src={"/Negar Yaraghi-CV-Storyboard Artist.pdf#view=fit"}
-            width='100%'
-            height='800px'
-            style={{ border: "none", maxHeight: 800 }}
-            title='PDF Viewer'></iframe>
+          <PdfViewer fileUrl={"/Negar Yaraghi-CV-Storyboard Artist.pdf#view=fit"} />
         </div>
       </main>
     </>
