@@ -1,8 +1,6 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Imagelist from "../components/Imagelist";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -12,10 +10,7 @@ export default function Animation() {
   return (
     <>
       <Head>
-        <title>
-          Negar Yaraghi -
-          About me/Contact
-        </title>
+        <title>Negar Yaraghi - About me/Contact</title>
         <meta
           name='description'
           content='Negar Yaraghi- About me/ Contact details'
@@ -29,10 +24,7 @@ export default function Animation() {
           href='/favicon.ico'
         />
       </Head>
-      <main
-        className={
-          styles.main
-        }>
+      <main className={styles.main}>
         {/* <div
           className={
             styles.banner
@@ -54,53 +46,59 @@ export default function Animation() {
         <div
           style={{
             marginTop: 30,
-            color:
-              "black !important",
+            color: "black !important",
           }}
-          className={
-            styles.about_me
-          }>
-          Hi! I&apos;m Negar.
+          className={styles.about_me}>
+          Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart! I&apos;m a
+          Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of experience in the
+          animation industry. I&apos;ve had the opportunity to work on films, series, and commercials both within studios and
+          as a freelancer. ☀️ Currently available for work!
           <br />
-          <br /> I am a
-          Storyboard and 2D
-          Artist. I love
-          animation over any
-          art, because it is
-          where all arts are
-          tied together and a
-          single work is
-          produced.
           <br />
-          <br /> I have been
-          working since 2017.
-          Mostly, I worked as
-          a freelancer, making
-          ads/animation from 0
-          to 100. At this
-          moment, I am working
-          on the Storyboard of
-          different projects
-          that I am really
-          excited about, as a
-          MA Animation
-          Production student
-          in the UK.
-          <br />
-          <br /> If you&apos;d
-          like to make an
-          interesting business
-          inquiry or ask a
-          question, please
-          contact me via
-          email:
+          ☀️ Contact: Email:{" "}
           <a
             style={{
               color: "blue",
             }}
             href='mailto:Yaraghi.negar@gmail.com'>
             Yaraghi.negar@gmail.com
+          </a>{" "}
+          <br />
+          <br />
+          Linkedin:{" "}
+          <a
+            style={{
+              color: "blue",
+            }}
+            href='https://www.linkedin.com/in/negar-yaraghi/'
+            target='_blank'>
+            www.linkedin.com/in/negar-yaraghi
           </a>
+          <br />
+          <br />
+          Instagram:{" "}
+          <a
+            style={{
+              color: "blue",
+            }}
+            href='https://www.instagram.com/negar_yaraghi'
+            target='_blank'>
+            @negar_yaraghi
+          </a>
+          <br />
+          <br />
+          Thanks for visiting!
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <iframe
+            src={"/Negar Yaraghi-CV-Storyboard Artist.pdf"}
+            width='100%'
+            height='800px'
+            style={{ border: "none", maxHeight: 800 }}
+            title='PDF Viewer'></iframe>
         </div>
       </main>
     </>
