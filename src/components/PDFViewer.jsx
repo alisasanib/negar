@@ -18,14 +18,14 @@ function MyApp() {
         style={{
           color: "blue",
         }}
-        href='/Negar.pdf'
-        download='Negar Yaraghi-Storyboard Artist.pdf'>
+        href='/Negar Yaraghi-CV-Storyboard Artist.pdf'
+        download='Negar Yaraghi-CV-Storyboard Artist.pdf'>
         Download CV
       </a>
       <br />
       <br />
       <Document
-        file='/Negar.pdf'
+        file='/Negar Yaraghi-CV-Storyboard Artist.pdf'
         onLoadSuccess={onDocumentLoadSuccess}>
         <Page
           size='A4'
