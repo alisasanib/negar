@@ -52,10 +52,10 @@ export default function Animation() {
           Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart! I&apos;m a
           Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of experience in the
           animation industry. I&apos;ve had the opportunity to work on films, series, and commercials both within studios and
-          as a freelancer. ☀️ Currently available for work!
+          as a freelancer. ☀️ Currently available for work! ☀️
           <br />
           <br />
-          ☀️ Contact: Email:{" "}
+          Contact: Email:{" "}
           <a
             style={{
               color: "blue",
