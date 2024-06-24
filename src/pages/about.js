@@ -48,14 +48,16 @@ export default function Animation() {
           style={{
             marginTop: 30,
             color: "black !important",
-            textAlign: "justify",
           }}
           className={styles.about_me}>
-          Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart!
-          I&apos;m a Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of experience
-          in the animation industry. I&apos;ve had the opportunity to work on films, series, and commercials both within
-          studios and as a freelancer. ☀️ Currently available for work! ☀️
+          <div style={{ textAlign: "justify" }}>
+            Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and
+            heart! I&apos;m a Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of
+            experience in the animation industry. I&apos;ve had the opportunity to work on films, series, and
+            commercials both within studios and as a freelancer.
+          </div>
           <br />
+          <div style={{ textAlign: "center" }}>☀️ Currently available for work! ☀️</div>
           <br />
           Contact: Email:{" "}
           <a

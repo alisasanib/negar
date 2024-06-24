@@ -28,6 +28,7 @@ function MyApp() {
         file='/Negar.pdf'
         onLoadSuccess={onDocumentLoadSuccess}>
         <Page
+          size='A4'
           pageNumber={pageNumber}
           renderTextLayer={false}
         />
