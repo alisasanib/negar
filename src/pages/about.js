@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import PdfViewer from "@/components/PDFViewer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -49,10 +50,10 @@ export default function Animation() {
             color: "black !important",
           }}
           className={styles.about_me}>
-          Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart! I&apos;m a
-          Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of experience in the
-          animation industry. I&apos;ve had the opportunity to work on films, series, and commercials both within studios and
-          as a freelancer. ☀️ Currently available for work! ☀️
+          Nice to meet you! I&apos;m Negar, and I&apos;m passionate about telling stories filled with action and heart!
+          I&apos;m a Storyboard Artist, Revisionist, and 2D Artist based in the UK, with over five years of experience
+          in the animation industry. I&apos;ve had the opportunity to work on films, series, and commercials both within
+          studios and as a freelancer. ☀️ Currently available for work! ☀️
           <br />
           <br />
           Contact: Email:{" "}
@@ -94,7 +95,7 @@ export default function Animation() {
           <br />
           <br />
           <iframe
-            src={"/Negar Yaraghi-CV-Storyboard Artist.pdf"}
+            src={"/Negar Yaraghi-CV-Storyboard Artist.pdf#view=fit"}
             width='100%'
             height='800px'
             style={{ border: "none", maxHeight: 800 }}
