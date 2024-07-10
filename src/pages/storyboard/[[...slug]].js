@@ -71,7 +71,7 @@ export const getStaticPaths = async () => {
       },
       {
         params: {
-          slug: ["unreleased_project"],
+          slug: ["animated_series"],
         },
       },
     ],
@@ -404,7 +404,7 @@ This story is a work in progress.`,
   {
     img: "storyboards/unreleased_project/thumbnail.jpg",
     title: "",
-    url: "unreleased_project",
+    url: "animated_series",
     description: `Comedy series for adults`,
     videos: [
       "/storyboards/unreleased_project/cleanup.mp4",
