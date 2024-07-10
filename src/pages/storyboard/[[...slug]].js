@@ -69,6 +69,11 @@ export const getStaticPaths = async () => {
           slug: ["behind-a-cartoon"],
         },
       },
+      {
+        params: {
+          slug: ["unreleased_project"],
+        },
+      },
     ],
     fallback: true,
   };
