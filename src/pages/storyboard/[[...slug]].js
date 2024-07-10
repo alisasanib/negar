@@ -7,8 +7,11 @@ import styles from "@/styles/Home.module.css";
 import CustomizedModalStoryBoard from "../../components/CustomizedModalStoryBoard";
 import ImageListNonMason from "../../components/ImageListNonMason";
 import StoryBoardDetails from "@/components/StoryBoardDetails";
+import TextField from "@mui/material/TextField";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/router";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
 
 function importAll(r) {
   return r.keys().filter((el) => !el.startsWith("public"));
@@ -91,6 +94,9 @@ export default function Home({ imageNames }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState(null);
   const [domLoaded, setDomLoaded] = useState(false);
+  const [auth, setAuth] = useState(false);
+  const [password, setPassword] = useState("");
+  const [errorAuth, setErrorAuth] = useState(false);
 
   useEffect(() => {
     setDomLoaded(true);
@@ -111,6 +117,36 @@ export default function Home({ imageNames }) {
   const handleOnClick = (id) => {
     setSelectedProject(images[id]);
     setIsModalOpen(true);
+  };
+
+  const handleClickAuth = () => {
+    try {
+      fetch("/api/authenticate", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          password,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status !== 200) {
+            setErrorAuth(true);
+            return;
+          }
+          setSelectedProject(images[8]);
+          setIsModalOpen(true);
+          setAuth(true);
+        })
+        .catch(() => {
+          // console.log("catch");
+        });
+    } catch (e) {
+      // console.log("eeeeeeeee", e);
+    }
   };
   return (
     <>
@@ -190,6 +226,7 @@ export default function Home({ imageNames }) {
           handleClose={() => {
             setSelectedProject(null);
             setIsModalOpen(false);
+            setAuth(false);
             router.push(
               {
                 pathname: "/storyboard",
@@ -201,10 +238,48 @@ export default function Home({ imageNames }) {
               }
             );
           }}>
-          <StoryBoardDetails
-            path={selectedProject?.path}
-            project={selectedProject}
-          />
+          {selectedProject?.path === "unreleased_project" && !auth ? (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "4rem",
+                alignItems: "center",
+                margin: "auto",
+                marginTop: "10%",
+              }}>
+              <div style={{ fontFamily: "Cantarell", fontSize: 20, fontWeight: "bold" }}>
+                This project is password protected. Please enter the password to view the project.
+              </div>
+              <TextField
+                style={{ width: "50%" }}
+                id='outlined-password-input'
+                label='Password'
+                type='password'
+                autoComplete='current-password'
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button
+                style={{ width: "50%", height: 50 }}
+                onClick={handleClickAuth}
+                variant='contained'>
+                Submit
+              </Button>
+              <Snackbar
+                type='error'
+                open={errorAuth}
+                autoHideDuration={6000}
+                onClose={() => setErrorAuth(false)}
+                message='Submited password was incorrect. Please try again.'
+                // action={action}
+              />
+            </div>
+          ) : (
+            <StoryBoardDetails
+              path={selectedProject?.path}
+              project={selectedProject}
+            />
+          )}
         </CustomizedModalStoryBoard>
       </main>
     </>
@@ -320,5 +395,20 @@ This story is a work in progress.`,
     images: importAll(
       require.context(`/public/storyboards/05- story behind the cartoon/images`, true, /\.(png|jpe?g|svg)$/)
     ),
+  },
+  {
+    img: "storyboards/unreleased_project/thumbnail.jpg",
+    title: "",
+    url: "unreleased_project",
+    description: `Comedy series for adults`,
+    videos: [
+      "/storyboards/unreleased_project/cleanup.mp4",
+      "/storyboards/unreleased_project/TMM_S01E02_SEQ03.mp4",
+      "/storyboards/unreleased_project/TMM_S01E02_SEQ12.mp4",
+    ],
+    path: "unreleased_project",
+    genre: "",
+    // gif: "storyboards/last_supper/GIF cover/resize.gif",
+    // images: importAll(require.context(`/public/storyboards/last_supper/images`, true, /\.(png|jpe?g|svg)$/)),
   },
 ];

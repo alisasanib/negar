@@ -9,6 +9,7 @@ import ImageGallery from "./ImageGallery";
 import useMediaQuery from "@mui/material/useMediaQuery";
 
 const StoryBoardDetails = ({ project }) => {
+  console.log("project", project);
   const withMargin = useMediaQuery("(min-width:900px)");
   const initialImage = useMediaQuery("(min-width:1428px)");
   const initialImage2 = useMediaQuery("(min-width:1028px)");
