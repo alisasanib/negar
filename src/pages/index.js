@@ -37,7 +37,7 @@ export default function Home() {
         />
         <meta
           property='og:image'
-          content='https://www.negaryaraghi.com/GonewiththeWind.jpg'
+          content='https://www.negaryaraghi.com/storyboards/last_supper/images/30.jpg'
         />
         <link
           rel='icon'
