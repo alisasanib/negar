@@ -95,7 +95,7 @@ export default function Animation() {
           <br />
           <br />
           <br />
-          <PdfViewer fileUrl={"/Negar Yaraghi-CV-Storyboard Artist.pdf#view=fit"} />
+          {/* <PdfViewer fileUrl={"/Negar Yaraghi-CV-Storyboard Artist.pdf#view=fit"} /> */}
         </div>
       </main>
     </>
