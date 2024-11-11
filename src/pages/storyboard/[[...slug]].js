@@ -405,11 +405,24 @@ This story is a work in progress.`,
     img: "storyboards/unreleased_project/thumbnail.jpg",
     title: "",
     url: "animated_series",
-    description: `Comedy series for adults`,
+    description: (
+      <div>
+        This is an animated comedy TV series designed for adults (18+), diving into the quirky world of startups and
+        their unconventional ideas.
+        <br />
+        <br />
+        My Role: Storyboard Artist <br />
+        <br />
+        In this project, I focused on bringing characters to life through realistic, action-driven scenes and nuanced,
+        dialogue-heavy moments. The role required careful choreography in scenes involving multiple characters, ensuring
+        each interaction felt dynamic and engaging.
+      </div>
+    ),
     videos: [
-      "/storyboards/unreleased_project/TMM_S02E04_SEQ11_animatic_v003.mp4",
-      "/storyboards/unreleased_project/TMM_S02E04_SEQ13_animatic_v002.mp4",
+      "/storyboards/unreleased_project/TMM_S02E05_SEQ05_animatic_V005.mp4",
       "/storyboards/unreleased_project/TMM_S02E04_SEQ15_animatic_v002.mp4",
+      "/storyboards/unreleased_project/TMM_S02E05_SEQ10_animatic_V002_FOR NEGAR.mp4",
+      "/storyboards/unreleased_project/TMM_S02E05_SEQ07_animatic_V003.mp4"
     ],
     path: "unreleased_project",
     genre: "",
