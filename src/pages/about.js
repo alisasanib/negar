@@ -11,10 +11,10 @@ export default function Animation() {
   return (
     <>
       <Head>
-        <title>Negar Yaraghi - About me/Contact</title>
+        <title>Nell Yaraghi - About me/Contact</title>
         <meta
           name='description'
-          content='Negar Yaraghi- About me/ Contact details'
+          content='Nell Yaraghi- About me/ Contact details'
         />
         <meta
           name='viewport'

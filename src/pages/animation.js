@@ -21,10 +21,10 @@ export default function Animation() {
   return (
     <>
       <Head>
-        <title>Negar Yaraghi - Animation</title>
+        <title>Nell Yaraghi - Animation</title>
         <meta
           name='description'
-          content='Negar Yaraghi - Storyboard Artist - 2D Artist - Animation Showreel'
+          content='Nell Yaraghi - Storyboard Artist - 2D Artist - Animation Showreel'
         />
         <meta
           name='viewport'

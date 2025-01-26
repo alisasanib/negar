@@ -36,7 +36,7 @@ const Navbar = ({
           <Nav>
             <Link href='/'>
               <div className='site-title'>
-                NEGAR YARAGHI
+                NELL YARAGHI
               </div>
             </Link>
             {/* <Burger /> */}

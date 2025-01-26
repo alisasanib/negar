@@ -156,10 +156,10 @@ export default function Home({ imageNames }) {
   return (
     <>
       <Head>
-        <title>Negar Yaraghi</title>
+        <title>Nell Yaraghi</title>
         <meta
           name='description'
-          content='Negar Yaraghi - StoryBoard Artist - Storyboards'
+          content='Nell Yaraghi - StoryBoard Artist - Storyboards'
         />
         <meta
           name='viewport'
@@ -167,7 +167,7 @@ export default function Home({ imageNames }) {
         />
         <meta
           property='og:title'
-          content='Negar Yaraghi - Storyboard/2D Artist'
+          content='Nell Yaraghi - Storyboard/2D Artist'
         />
         <meta
           property='og:type'

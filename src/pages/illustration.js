@@ -12,10 +12,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Negar Yaraghi</title>
+        <title>Nell Yaraghi</title>
         <meta
           name='description'
-          content='Negar Yaraghi - Illustration'
+          content='Nell Yaraghi - Illustration'
         />
         <meta
           name='viewport'
@@ -23,7 +23,7 @@ export default function Home() {
         />
         <meta
           property='og:title'
-          content='Negar Yaraghi - Storyboard/2D Artist'
+          content='Nell Yaraghi - Storyboard/2D Artist'
         />
         <meta
           property='og:type'
