@@ -95,6 +95,10 @@ export default function App({ Component, pageProps }) {
           href='https://fonts.googleapis.com/css?family=Cantarell&display=optional'
           rel='stylesheet'
         />
+        <meta
+          name='google-site-verification'
+          content='Bxy3qtLaH_r6slWRwqq7mmD__YFRKW4Mj11KmR52QL4'
+        />
       </Head>
       <Navbar>
         <Component {...pageProps} />
